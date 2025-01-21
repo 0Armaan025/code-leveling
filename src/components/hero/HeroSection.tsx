@@ -1,5 +1,7 @@
+"use client";
 import React from 'react';
 import './hero-section.css';
+import ScribbleText from '../scribble-text/ScribbleText';
 
 type Props = {}
 
@@ -9,7 +11,7 @@ const HeroSection = (props: Props) => {
             <div className="heroSection">
                 <div className="flex flex-row justify-start items-center">
                     <div className="flex flex-col ml-8 p-4 mt-16 justify-start items-start">
-                        <h3 className='text-6xl text-white font-semibold w-[40rem] leading-[4rem]' style={{ fontFamily: "Montserrat, serif" }}>Get <span className='text-[#DF98FB] underline underline-offset-4 decoration-wavy'> coding boost </span> to turn yourself into a coding machine!</h3>
+                        <h3 className='text-6xl text-white font-semibold w-[40rem] leading-[4rem]' style={{ fontFamily: "Montserrat, serif" }}>Get <span className='text-[#DF98FB] '> <ScribbleText>coding boost</ScribbleText> </span> to turn yourself into a coding machine!</h3>
 
 
                         {/* a bit of space  */}
