@@ -1,0 +1,35 @@
+@keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6, 0 0 30px #3b82f6;
+    }
+    50% {
+      box-shadow: 0 0 20px #3b82f6, 0 0 40px #3b82f6, 0 0 60px #3b82f6;
+    }
+  }
+
+  .wrapperOfElixir  {
+    perspective: 1000;
+  }
+
+  .elixirDiv {
+    transition: transform 0.s ease-in-out; /* Smooth transition for rotation */
+  transform-style: preserve-3d; /* Ensures 3D transformations are maintained */
+    /* animation: moveUPAndDown 1s infinite alternate; /*Adding the glow effect*/
+  }
+
+  .elixirDiv:hover {
+    transform: rotateX(20deg) rotateY(3deg) rotateZ(0deg); /* Rotating the element on all 3 axes */
+
+  }
+
+    @keyframes moveUPAndDown {
+        0% {
+        transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-5);
+        }
+        100% {
+        transform: translateY(-10px);
+        }
+    }

@@ -2,6 +2,7 @@
 import React from 'react';
 import './hero-section.css';
 import ScribbleText from '../scribble-text/ScribbleText';
+import ElixirOfLife from '../elixir/elixir_of_life';
 
 type Props = {}
 
@@ -29,7 +30,9 @@ const HeroSection = (props: Props) => {
                           <input type="button" value="See documentation..." className='ml-4 px-5 py-2 bg-white bg-opacity-10  text-white hover:bg-opacity-15 transition-all cursor-pointer rounded-3xl text-lg font-medium' style={{fontFamily: 'Montserrat, serif'}} />
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center"></div>
+                    <div className="flex flex-col ml-8 justify-center items-center">
+                        <ElixirOfLife/>
+                    </div>
                 </div>
             </div>
         </>
