@@ -16,7 +16,7 @@ const Navbar = (props: Props) => {
     return (
         <>
             {/* Navbar */}
-            <nav className="navbar flex justify-between items-center px-4 py-2 border-b border-gray-800">
+            <nav className="navbar flex justify-between sticky top-0 z-[10000] bg-black bg-opacity-40 items-center px-4 py-2 border-b border-gray-800  blur-[0.3px]">
                 {/* Logo and Title Section */}
                 <div className="flex items-center">
                     <div className="flex items-center bg-white h-8 w-8 rounded-md">
@@ -50,7 +50,7 @@ const Navbar = (props: Props) => {
 
                 {/* Links and Buttons */}
                 <div className="hidden md:flex items-center space-x-6">
-                    <h3 className="text-[#fff] hover:text-[#b2b2b3] transition-all cursor-pointer font-medium" style={{ fontFamily: "Montserrat, serif" }}>
+                    <h3 className="text-[#fff] z-[999] hover:text-[#b2b2b3] transition-all cursor-pointer font-medium" style={{ fontFamily: "Montserrat, serif" }}>
                         Docs
                     </h3>
                     <h3 className="text-[#fff] hover:text-[#b2b2b3] transition-all cursor-pointer font-medium" style={{ fontFamily: "Montserrat, serif" }}>

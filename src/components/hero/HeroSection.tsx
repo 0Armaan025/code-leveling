@@ -4,9 +4,11 @@ import './hero-section.css';
 import ScribbleText from '../scribble-text/ScribbleText';
 import ElixirOfLife from '../elixir/elixir_of_life';
 import XCard from '../x-card/XCard';
+import Image from 'next/image';
 import ThemeToggleBtn from '../theme-toggle/ThemeToggleBtn';
 import CodeLevelingLogo from '../code-leveling-logo/CodeLevelingLogo';
 import FeatureCard from '../feature-card/FeatureCard';
+import MacBookComponent from '../macbook/Macbook';
 
 type Props = {}
 
@@ -72,7 +74,27 @@ const HeroSection = (props: Props) => {
                 <FeatureCard logoUrl="https://cdn-icons-png.flaticon.com/128/1067/1067357.png" featureContent='Get a great boost in your coding journey! ' featureTitle='Coding boost!' />
                 <FeatureCard logoUrl="https://cdn-icons-png.flaticon.com/128/12663/12663290.png" featureContent='Analyse the time spent on projects and tech-stacks you use!' featureTitle='Project insights!' />
                 <FeatureCard logoUrl="https://cdn-icons-png.flaticon.com/128/2817/2817958.png" featureContent='Level up and be on the leaderboard!' featureTitle='Ranking system!' />
-                <FeatureCard logoUrl="https://cdn-icons-png.flaticon.com/128/11918/11918414.png" featureContent='Modify your profile interactively by leveling up! :D and getting stuff from shop' featureTitle='Interactive profile!' />
+                <FeatureCard logoUrl="https://cdn-icons-png.flaticon.com/128/11918/11918414.png" featureContent='Modify your profile interactively by leveling up! :D and getting stuff from shop.' featureTitle='Interactive profile!' />
+            </div>
+
+            <div className="flex flex-col justify-center items-center mt-16 mb-8">
+                <h3 className='text-[#68686d] text-lg font-medium' style={{ fontFamily: "Montserrat, serif" }}>Supported by</h3>
+                <br />
+                <div className="flex flex-row justify-center items-center">
+
+
+                    {/* supported by kinda thingy container kinda */}
+
+                    <div className='items-center justify-center text-white rounded-lg bg-[#18181b] hover:bg-opacity-70 transition-all cursor-pointer px-4 py-2 border-[0.5px] border-gray-700 ' style={{ fontFamily: "Montserrat, serif" }}>
+                        No one :(
+                    </div>
+                    <div className='iSupportYa items-center ml-4 justify-center flex flex-row text-white rounded-lg bg-[#18181b] hover:bg-opacity-70 transition-all cursor-pointer px-4 py-2 border-[0.5px] border-gray-700 '>
+                        <h3 style={{ fontFamily: "Montserrat, serif" }} className='text-purple-500'>I will 	&lt;3</h3>
+                        <Image src="https://cdn-icons-png.flaticon.com/128/508/508786.png" className='.heartImage ml-2' alt="heart icon" height={20} width={20} />
+                    </div>
+
+                </div>
+                
             </div>
 
         </>
