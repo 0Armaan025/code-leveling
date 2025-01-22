@@ -3,6 +3,9 @@ import React from 'react';
 import './hero-section.css';
 import ScribbleText from '../scribble-text/ScribbleText';
 import ElixirOfLife from '../elixir/elixir_of_life';
+import XCard from '../x-card/XCard';
+import ThemeToggleBtn from '../theme-toggle/ThemeToggleBtn';
+import CodeLevelingLogo from '../code-leveling-logo/CodeLevelingLogo';
 
 type Props = {}
 
@@ -26,12 +29,20 @@ const HeroSection = (props: Props) => {
 
                         {/* buttons div here  */}
                         <div className="flex flex-row justify-start items-center">
-                          <input type="button" value="Get Started ->" className='px-5 py-2 bg-[#0064d7] text-white hover:bg-[#025cc4] transition-all cursor-pointer rounded-3xl text-lg font-medium' style={{fontFamily: 'Montserrat, serif'}}/>
+                          <input type="button" value="Get VS Code extension" className='px-5 py-2 bg-[#0064d7] text-white hover:bg-[#025cc4] transition-all cursor-pointer rounded-3xl text-lg font-medium' style={{fontFamily: 'Montserrat, serif'}}/>
                           <input type="button" value="See documentation..." className='ml-4 px-5 py-2 bg-white bg-opacity-10  text-white hover:bg-opacity-15 transition-all cursor-pointer rounded-3xl text-lg font-medium' style={{fontFamily: 'Montserrat, serif'}} />
                         </div>
                     </div>
-                    <div className="flex flex-col ml-8 justify-center items-center">
+                    <div className="flex flex-col ml-8 justify-center items-center relative">
+                        <div className="elixirDiv  right-20 mt-8">
+                        <XCard/>
+
                         <ElixirOfLife/>
+
+                        </div>
+                        <ThemeToggleBtn/>
+                        <CodeLevelingLogo/>
+
                     </div>
                 </div>
             </div>

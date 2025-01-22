@@ -12,14 +12,14 @@
   }
 
   .elixirDiv {
-    transition: transform 0.s ease-in-out; /* Smooth transition for rotation */
+    transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1); /* Smooth transition for rotation */
   transform-style: preserve-3d; /* Ensures 3D transformations are maintained */
     /* animation: moveUPAndDown 1s infinite alternate; /*Adding the glow effect*/
   }
 
   .elixirDiv:hover {
     transform: rotateX(20deg) rotateY(3deg) rotateZ(0deg); /* Rotating the element on all 3 axes */
-
+    cursor: pointer;
   }
 
     @keyframes moveUPAndDown {

@@ -15,7 +15,7 @@ const Navbar = (props: Props) => {
                 <div className="flex flex-row justify-center items-center p-2 ml-1">
                     <div className="flex flex-col justify-center items-center bg-white h-8 w-8 rounded-md">
 
-                        <Image src={LOGO_LIGHT} alt="logo" width={40} height={40} />
+                        <Image src={LOGO_LIGHT} alt="logo" width={40} height={40} className='hover:cursor-pointer transition-all hover:shadow-md  hover:shadow-gray-700'/>
                     </div>
                     <h3 className="headingText text-white ml-4 font-semibold text-xl" style={{ fontFamily: "Montserrat, serif" }}>Code-leveling</h3>
 
