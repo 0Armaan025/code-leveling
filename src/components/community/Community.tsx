@@ -23,7 +23,7 @@ const Community = (props: Props) => {
             </div>
 
             {/* Cards Section */}
-            <div className="flex flex-wrap justify-center items-center gap-6">
+            <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
                 <CommunityCard
                     url=""
                     logoUrl="https://cdn-icons-png.flaticon.com/128/5969/5969020.png"
