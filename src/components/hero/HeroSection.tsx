@@ -9,6 +9,7 @@ import ThemeToggleBtn from '../theme-toggle/ThemeToggleBtn';
 import CodeLevelingLogo from '../code-leveling-logo/CodeLevelingLogo';
 import FeatureCard from '../feature-card/FeatureCard';
 import MacBookComponent from '../macbook/Macbook';
+import Community from '../community/Community';
 
 type Props = {}
 
@@ -94,9 +95,18 @@ const HeroSection = (props: Props) => {
                     </div>
 
                 </div>
-                
+                <div className="mt-16 flex flex-col justify-center items-center mb-16 hover:cursor-pointer transition-all hover:translate-x-5">
+                    <video width="640" height="480" controls autoPlay={true} className='rounded-md shadow-lg border-[20px] border-[#111113] shadow-gray-700'>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <label className="mt-8 text-xl font-medium" style={{ fontFamily: "Montserrat, serif" }}>Demo of Code-leveling ⬆️</label>
+                </div>
             </div>
 
+            <div className="community mb-16">
+                <Community />
+            </div>
         </>
     );
 }
