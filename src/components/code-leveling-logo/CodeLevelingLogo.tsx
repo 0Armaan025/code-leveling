@@ -9,11 +9,11 @@ type Props = {}
 const CodeLevelingLogo = (props: Props) => {
   return (
     <>
-        <div className="p-2 bg-[18191c] justify-center items-center  ">
-            <Image src={LOGO_DARK} alt="LOGO" width={72} height={72} className='hover:cursor-pointer transition-all hover:shadow-md  hover:shadow-gray-700'/>
+        <div className="codeLevelingLogoDiv p-2 bg-[18191c] justify-center items-center relative left-60 bottom-48 ">
+            <Image src={LOGO_DARK} alt="LOGO" width={120} height={120} className='bg-[#18181b] rounded-xl transition-all '/>
         </div>
     </>
   );
 }
 
-export default CodeLevelingLogo
+export default CodeLevelingLogo;

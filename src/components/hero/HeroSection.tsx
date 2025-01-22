@@ -22,26 +22,26 @@ const HeroSection = (props: Props) => {
 
                         <div className="h-8"></div>
 
-                        <h4 className='text-xl text-[#a1a1aa] w-[40rem]' style={{fontFamily: "Hind Madurai"}}>You get to level-up like never before! Motivation and dopamine at its peaks.</h4>
+                        <h4 className='text-xl text-[#a1a1aa] w-[40rem]' style={{ fontFamily: "Hind Madurai" }}>You get to level-up like never before! Motivation and dopamine at its peaks.</h4>
 
                         {/* a bit of space  */}
                         <div className="h-8"></div>
 
                         {/* buttons div here  */}
                         <div className="flex flex-row justify-start items-center">
-                          <input type="button" value="Get VS Code extension" className='px-5 py-2 bg-[#0064d7] text-white hover:bg-[#025cc4] transition-all cursor-pointer rounded-3xl text-lg font-medium' style={{fontFamily: 'Montserrat, serif'}}/>
-                          <input type="button" value="See documentation..." className='ml-4 px-5 py-2 bg-white bg-opacity-10  text-white hover:bg-opacity-15 transition-all cursor-pointer rounded-3xl text-lg font-medium' style={{fontFamily: 'Montserrat, serif'}} />
+                            <input type="button" value="Get VS Code extension" className='px-5 py-2 bg-[#0064d7] text-white hover:bg-[#025cc4] transition-all cursor-pointer rounded-3xl text-lg font-medium' style={{ fontFamily: 'Montserrat, serif' }} />
+                            <input type="button" value="See documentation..." className='ml-4 px-5 py-2 bg-white bg-opacity-10  text-white hover:bg-opacity-15 transition-all cursor-pointer rounded-3xl text-lg font-medium' style={{ fontFamily: 'Montserrat, serif' }} />
                         </div>
                     </div>
-                    <div className="flex flex-col ml-8 justify-center items-center relative">
+                    <div className="rightSideDiv flex flex-col ml-8 justify-center items-center relative">
                         <div className="elixirDiv  right-20 mt-8">
-                        <XCard/>
+                            <XCard />
 
-                        <ElixirOfLife/>
+                            <ElixirOfLife />
 
                         </div>
-                        <ThemeToggleBtn/>
-                        <CodeLevelingLogo/>
+                        <ThemeToggleBtn />
+                        <CodeLevelingLogo />
 
                     </div>
                 </div>

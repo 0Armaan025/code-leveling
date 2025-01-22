@@ -1,3 +1,4 @@
+"use client";
 import HeroSection from '@/components/hero/HeroSection';
 import Navbar from '@/components/navbar/Navbar';
 import React from 'react'
