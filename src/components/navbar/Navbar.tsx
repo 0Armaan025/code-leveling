@@ -84,7 +84,7 @@ const Navbar = (props: Props) => {
                         <h3 className="text-[#fff] ml-2 font-semibold" style={{ fontFamily: "Montserrat, serif" }}>Discord</h3>
                     </div>
                     <div className="px-2 py-2 flex items-center justify-center rounded-3xl border-[0.5px] cursor-pointer hover:bg-white hover:bg-opacity-5 transition-all border-gray-700">
-                        <Image src="https://i.ibb.co/2d8MDpx/profile-user.png" alt="profile logo" height={30} width={20} />
+                        <a href="/api/auth/login"><Image src="https://i.ibb.co/2d8MDpx/profile-user.png" alt="profile logo" height={30} width={20} /></a>
                     </div>
                 </div>
 
