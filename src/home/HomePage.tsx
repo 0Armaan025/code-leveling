@@ -7,13 +7,13 @@ import './homepage.css';
 type Props = {}
 
 const HomePage = (props: Props) => {
-  return (
-    <>
-        <div className="homePage">
-            <HeroSection/>
-        </div>
-    </>
-  );
+    return (
+        <>
+            <div className="homePage bg-gradient-to-br from-gray-900 to-black">
+                <HeroSection />
+            </div>
+        </>
+    );
 }
 
 export default HomePage

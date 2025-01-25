@@ -1,39 +1,49 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import LOGO_LIGHT from "../../../public/logo_light.png";
 import './navbar.css';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
-type Props = {}
+type Props = {};
 
 const Navbar = (props: Props) => {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
+    const pathname = usePathname(); // Get the current path
 
     const toggleSidebar = () => {
         setSidebarOpen(!isSidebarOpen);
     };
 
+    // Function to determine the text style based on the current path
+    const getLinkStyle = (path: string) => {
+        return pathname === path
+            ? 'text-white font-semibold'
+            : 'text-gray-500 hover:text-gray-400';
+    };
+
     return (
         <>
             {/* Navbar */}
-            <nav className="navbar flex justify-between sticky top-0 z-[10000] bg-black bg-opacity-40 items-center px-4 py-2 border-b border-gray-800  blur-[0.3px]">
+            <nav className="navbar flex justify-between sticky top-0 z-[10000] bg-black bg-opacity-40 items-center px-4 py-2 border-b border-gray-800 blur-[0.3px]">
                 {/* Logo and Title Section */}
                 <div className="flex items-center">
                     <div className="flex items-center bg-white h-8 w-8 rounded-md">
-                        <Image
+                        <Link href="/"><Image
                             src={LOGO_LIGHT}
                             alt="logo"
                             width={40}
                             height={40}
                             className="hover:cursor-pointer transition-all hover:shadow-md hover:shadow-gray-700"
-                        />
+                        /></Link>
                     </div>
-                    <h3
+                    <Link href="/"><h3
                         className="headingText text-white ml-4 font-semibold text-lg"
                         style={{ fontFamily: "Montserrat, serif" }}
                     >
                         Code-Leveling
-                    </h3>
+                    </h3></Link>
                     {/* Version Badge and Introduction Chip */}
                     <div className="hidden md:flex items-start ml-4">
                         <div className="px-3 py-1 ml-0 rounded-3xl cursor-pointer hover:bg-[#28282b] transition-all bg-[#1d1d1f] text-[#7f7f86]">
@@ -45,20 +55,26 @@ const Navbar = (props: Props) => {
                     </div>
                 </div>
 
-
-
-
                 {/* Links and Buttons */}
                 <div className="hidden md:flex items-center space-x-6">
-                    <h3 className="text-[#fff] z-[999] hover:text-[#b2b2b3] transition-all cursor-pointer font-medium" style={{ fontFamily: "Montserrat, serif" }}>
+                    <Link href="/docs"><h3
+                        className={`transition-all cursor-pointer ${getLinkStyle('/docs')}`}
+                        style={{ fontFamily: "Montserrat, serif" }}
+                    >
                         Docs
-                    </h3>
-                    <h3 className="text-[#fff] hover:text-[#b2b2b3] transition-all cursor-pointer font-medium" style={{ fontFamily: "Montserrat, serif" }}>
+                    </h3></Link>
+                    <Link href="/about"><h3
+                        className={`transition-all cursor-pointer ${getLinkStyle('/about')}`}
+                        style={{ fontFamily: "Montserrat, serif" }}
+                    >
                         About
-                    </h3>
-                    <h3 className="text-[#fff] hover:text-[#b2b2b3] transition-all cursor-pointer font-medium" style={{ fontFamily: "Montserrat, serif" }}>
+                    </h3></Link>
+                    <Link href="/leaderboard"> <h3
+                        className={`transition-all cursor-pointer ${getLinkStyle('/leaderboard')}`}
+                        style={{ fontFamily: "Montserrat, serif" }}
+                    >
                         Leaderboard
-                    </h3>
+                    </h3></Link>
                     <div className="px-3 py-1 flex items-center rounded-3xl border-[0.5px] cursor-pointer hover:bg-white hover:bg-opacity-5 transition-all border-gray-700">
                         <Image src="https://i.ibb.co/4NjcSnQ/github.png" alt="github logo" height={20} width={20} />
                         <h3 className="text-[#fff] ml-2 font-semibold" style={{ fontFamily: "Montserrat, serif" }}>GitHub</h3>
@@ -101,9 +117,9 @@ const Navbar = (props: Props) => {
                             Close
                         </button>
                         <ul className="space-y-4">
-                            <li className="text-white hover:text-gray-400 cursor-pointer">Docs</li>
-                            <li className="text-white hover:text-gray-400 cursor-pointer">About</li>
-                            <li className="text-white hover:text-gray-400 cursor-pointer">Leaderboard</li>
+                            <li className={`cursor-pointer ${getLinkStyle('/docs')}`}>Docs</li>
+                            <li className={`cursor-pointer ${getLinkStyle('/about')}`}>About</li>
+                            <li className={`cursor-pointer ${getLinkStyle('/leaderboard')}`}>Leaderboard</li>
                             <li className="text-white hover:text-gray-400 cursor-pointer">GitHub</li>
                             <li className="text-white hover:text-gray-400 cursor-pointer">Discord</li>
                         </ul>
@@ -112,6 +128,6 @@ const Navbar = (props: Props) => {
             )}
         </>
     );
-}
+};
 
 export default Navbar;
