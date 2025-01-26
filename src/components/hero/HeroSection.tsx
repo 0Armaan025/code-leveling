@@ -8,8 +8,9 @@ import Image from 'next/image';
 import ThemeToggleBtn from '../theme-toggle/ThemeToggleBtn';
 import CodeLevelingLogo from '../code-leveling-logo/CodeLevelingLogo';
 import FeatureCard from '../feature-card/FeatureCard';
-import MacBookComponent from '../macbook/Macbook';
+
 import Community from '../community/Community';
+import Link from 'next/link';
 
 type Props = {}
 
@@ -49,12 +50,14 @@ const HeroSection = (props: Props) => {
                             className="px-5 py-2 w-60 bg-[#0064d7] text-white hover:bg-[#025cc4] transition-all cursor-pointer rounded-3xl text-lg font-medium"
                             style={{ fontFamily: 'Montserrat, serif' }}
                         />
-                        <input
-                            type="button"
-                            value="See documentation..."
-                            className="mt-4 w-60 md:mt-0 md:ml-4 px-5 py-2 bg-white bg-opacity-10 text-white hover:bg-opacity-15 transition-all cursor-pointer rounded-3xl text-lg font-medium"
-                            style={{ fontFamily: 'Montserrat, serif' }}
-                        />
+                        <Link href="/docs">
+                            <input
+                                type="button"
+                                value="See documentation..."
+                                className="mt-4 w-60 md:mt-0 md:ml-4 px-5 py-2 bg-white bg-opacity-10 text-white hover:bg-opacity-15 transition-all cursor-pointer rounded-3xl text-lg font-medium"
+                                style={{ fontFamily: 'Montserrat, serif' }}
+                            />
+                        </Link>
                     </div>
                 </div>
 
