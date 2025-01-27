@@ -1,162 +1,207 @@
-import React, { useState, useEffect, useRef } from "react";
-import * as THREE from 'three';
+"use client";
+import './docs-page.css';
+import Image from 'next/image';
+import React, { useState, useEffect, useRef } from 'react';
 
-const ProfilePage = () => {
-    const [isPrivate, setIsPrivate] = useState(false);
-    const [userData, setUserData] = useState<any>({
-        realName: "John Doe",
-        developerName: "@coder123",
-        devBits: "1,500",
-        totalCodingTime: "1,200 hours",
-        mostUsedLanguage: "JavaScript",
-        bestProject: "CodeLevel Platform",
-        bio: "Passionate coder | Open-source enthusiast | Building cool stuff 🚀",
-        codingStreak: "42 days",
-        currentLevel: "Advanced",
-        favoriteLanguage: "JavaScript",
-        email: "john.doe@example.com",
-    });
-    const [isEditing, setIsEditing] = useState(false);
-    const canvasRef = useRef(null);
+type Props = {};
 
-    useEffect(() => {
-        if (!canvasRef.current) return;
+const DocsPage = (props: Props) => {
+    // State to manage the collapse/show functionality
+    const [isCollapsed, setIsCollapsed] = useState(false);
 
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current });
+    // State to manage the currently active feature
+    const [activeFeature, setActiveFeature] = useState('Introduction');
 
-        const geometry = new THREE.SphereGeometry(1, 60, 60);
-        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-        const sphere = new THREE.Mesh(geometry, material);
-        scene.add(sphere);
+    // Refs for each feature's content section
+    const featureRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
-        camera.position.z = 5;
+    // List of features
+    const features = [
+        'Introduction',
+        'How to level up?',
+        'Shop - how to redeem',
+        'Shoutouts',
+        'Leaderboard',
+        'FAQs',
+        'Contact',
+    ];
 
-        function animate() {
-            requestAnimationFrame(animate);
-            sphere.rotation.y += 0.01;
-            renderer.render(scene, camera);
-        }
-
-        animate();
-
-        return () => {
-            renderer.dispose();
-            scene.remove(sphere);
-            geometry.dispose();
-            material.dispose();
-        };
-    }, []);
-
-    const toggleProfileVisibility = () => setIsPrivate(!isPrivate);
-    const handleInputChange = (field: any, value: any) => {
-        setUserData((prev: any) => ({
-            ...prev,
-            [field]: value
-        }));
+    // Function to toggle the collapse/show state
+    const toggleCollapse = () => {
+        setIsCollapsed(!isCollapsed);
     };
-    const saveChanges = () => setIsEditing(false);
+
+    // Function to handle feature click
+    const handleFeatureClick = (feature: string) => {
+        setActiveFeature(feature);
+        // Scroll to the selected feature's content
+        featureRefs.current[feature]?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    // Effect to observe the visibility of feature sections
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        // Update the active feature when the section is in view
+                        setActiveFeature(entry.target.id);
+                    }
+                });
+            },
+            {
+                root: null, // Use the viewport as the root
+                rootMargin: '0px',
+                threshold: 0.5, // Trigger when 50% of the section is visible
+            }
+        );
+
+        // Observe each feature's content section
+        features.forEach((feature) => {
+            const element = featureRefs.current[feature];
+            if (element) {
+                observer.observe(element);
+            }
+        });
+
+        // Cleanup observer on unmount
+        return () => {
+            features.forEach((feature) => {
+                const element = featureRefs.current[feature];
+                if (element) {
+                    observer.unobserve(element);
+                }
+            });
+        };
+    }, [features]);
 
     return (
-        <div className="profilePage min-h-screen bg-gradient-to-br from-gray-900 to-black flex items-center justify-center p-8">
-            <div className="relative w-[800px] h-[450px] bg-gray-800 bg-opacity-50 backdrop-blur-md rounded-3xl border border-gray-700 shadow-2xl transform transition-transform duration-500 hover:rotate-2 hover:scale-105 hover:shadow-3xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-800 to-blue-900 opacity-20 rounded-3xl"></div>
-
-                <div className="relative flex h-full">
-                    <div className="w-1/3 flex flex-col items-center justify-center p-6 border-r border-gray-700">
-                        <div className="w-48 h-48 rounded-full bg-blue-600 flex items-center justify-center overflow-hidden border-4 border-blue-400">
-                            <canvas ref={canvasRef} className="w-full h-full"></canvas>
-                        </div>
-                        <h1 className="text-2xl font-bold text-white mt-4">{userData.realName}</h1>
-                        <p className="text-blue-400 text-sm">{userData.developerName}</p>
+        <>
+            <div className="docsPage flex flex-col md:flex-row justify-start items-start bg-gradient-to-br from-gray-900 to-black min-h-screen">
+                {/* Sidebar Section */}
+                <div className={`flex flex-col justify-start items-start overflow-x-hidden md:ml-8 mt-0 md:h-[170vh] p-2 md:pr-12 border-r-[0.5px] border-r-gray-700 ${isCollapsed ? 'w-16' : 'w-full md:w-60'}`}>
+                    <div className="flex flex-row justify-start items-center mt-8 cursor-pointer w-48" onClick={toggleCollapse}>
+                        <h2 className="font-medium" style={{ fontFamily: 'Montserrat, serif' }}>
+                            Getting Started
+                        </h2>
+                        <Image
+                            src="https://i.ibb.co/2k8zSwc/arrow-down-sign-to-navigate.png"
+                            alt="down arrow alt"
+                            height={16}
+                            width={16}
+                            className={`ml-4 transition-transform duration-200 ${isCollapsed ? 'transform rotate-180' : ''}`}
+                        />
                     </div>
 
-                    <div className="w-2/3 flex flex-col justify-between p-6 space-y-4">
-                        <div className="grid grid-cols-2 gap-4">
-                            {[
-                                ["Real Name", "realName"],
-                                ["Developer Name", "developerName"],
-                                ["Email", "email"],
-                                ["DevBits", "devBits"],
-                                ["Total Coding Time", "totalCodingTime"],
-                                ["Most Used Language", "mostUsedLanguage"],
-                                ["Best Project", "bestProject"],
-                                ["Bio", "bio"],
-                                ["Coding Streak", "codingStreak"],
-                                ["Current Level", "currentLevel"],
-                                ["Favorite Language", "favoriteLanguage"],
-                            ].map(([label, key]) => (
-                                <div key={key}>
-                                    <label className="text-sm text-gray-400">{label}</label>
-                                    {isEditing && !["devBits", "totalCodingTime", "codingStreak", "currentLevel", "bestProject"].includes(key) ? (
-                                        <input
-                                            type="text"
-                                            value={userData[key]}
-                                            onChange={(e) =>
-                                                handleInputChange(key, e.target.value)
-                                            }
-                                            className="w-full bg-gray-700 text-white p-2 rounded-md"
-                                        />
-                                    ) : (
-                                        <p className="text-white">{userData[key]}</p>
-                                    )}
-                                </div>
+                    {/* Collapsible Feature List */}
+                    {!isCollapsed && (
+                        <ul className="mt-4 pl-6 list-disc space-y-2">
+                            {features.map((feature, index) => (
+                                <li
+                                    key={index}
+                                    className={`ml-4 p-2 rounded transition-all duration-200 cursor-pointer ${activeFeature === feature
+                                        ? 'text-white font-semibold'
+                                        : 'hover:text-gray-400 text-gray-600'
+                                        }`}
+                                    onClick={() => handleFeatureClick(feature)}
+                                >
+                                    {feature}
+                                </li>
                             ))}
-                        </div>
-
-                        <div className="flex items-center justify-between">
-                            <span className="text-sm text-gray-400">
-                                {isPrivate ? "Private" : "Public"}
-                            </span>
-                            <button
-                                onClick={toggleProfileVisibility}
-                                className={`w-12 h-6 rounded-full p-1 transition-colors duration-200 ${isPrivate ? "bg-red-600" : "bg-blue-600"}`}
-                            >
-                                <div
-                                    className={`w-4 h-4 bg-white rounded-full transform transition-transform duration-200 ${isPrivate ? "translate-x-6" : "translate-x-0"}`}
-                                ></div>
-                            </button>
-                        </div>
-
-                        <button
-                            onClick={isEditing ? saveChanges : () => setIsEditing(true)}
-                            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-200"
-                        >
-                            {isEditing ? "Save Changes" : "Edit Profile"}
-                        </button>
-                    </div>
+                        </ul>
+                    )}
                 </div>
 
-                {/* Sparkles */}
-                <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                        backgroundImage: "url('https://svgshare.com/i/rgz.svg')",
-                        backgroundSize: "150px 150px",
-                        animation: "sparkles 5s linear infinite",
-                    }}
-                ></div>
-            </div>
+                {/* Main Content Section */}
+                <div className="flex flex-col justify-start items-start md:ml-8 mt-8 w-full p-4 md:p-0">
+                    <h1 className="text-2xl md:text-3xl font-bold mb-4">Welcome to Code Leveling</h1>
+                    <p className="text-gray-600">
+                        Your ultimate guide to mastering code and leveling up your skills.
+                    </p>
 
-            <style jsx>{`
-                @keyframes sparkles {
-                  0% {
-                    opacity: 0;
-                    transform: translateY(10px);
-                  }
-                  50% {
-                    opacity: 1;
-                    transform: translateY(-10px);
-                  }
-                  100% {
-                    opacity: 0;
-                    transform: translateY(10px);
-                  }
-                }
-              `}</style>
-        </div>
+                    {/* Dynamic Content Based on Active Feature */}
+                    <div className="mt-8 w-full">
+                        {features.map((feature, index) => (
+                            <div
+                                key={index}
+                                id={feature}
+                                ref={(el) => (featureRefs.current[feature] = el)}
+                                className="mb-12"
+                            >
+                                {feature === 'Introduction' && (
+                                    <div>
+                                        <h2 className="text-xl md:text-2xl font-semibold mb-4">Introduction</h2>
+                                        <p className="text-gray-700">
+                                            Code Leveling is a platform designed to help developers of all skill levels improve their coding abilities. Whether you're a beginner or an experienced programmer, our tools and resources will help you level up your skills.
+                                        </p>
+
+                                    </div>
+                                )}
+
+                                {feature === 'How to level up?' && (
+                                    <div>
+                                        <h2 className="text-xl md:text-2xl font-semibold mb-4">How to Level Up?</h2>
+                                        <p className="text-gray-700">
+                                            To level up, complete coding challenges, participate in community events, and earn points. As you progress, you'll unlock new features and rewards.
+                                        </p>
+                                    </div>
+                                )}
+
+                                {feature === 'Shop - how to redeem' && (
+                                    <div>
+                                        <h2 className="text-xl md:text-2xl font-semibold mb-4">Shop - How to Redeem</h2>
+                                        <p className="text-gray-700">
+                                            Use your earned points to redeem exclusive items in the shop. Visit the shop section to browse available rewards and follow the instructions to redeem them.
+                                        </p>
+                                    </div>
+                                )}
+
+                                {feature === 'Shoutouts' && (
+                                    <div>
+                                        <h2 className="text-xl md:text-2xl font-semibold mb-4">Shoutouts</h2>
+                                        <p className="text-gray-700">
+                                            Recognize and celebrate the achievements of fellow developers. Give shoutouts to those who have helped you or inspired you in your coding journey.
+                                        </p>
+                                    </div>
+                                )}
+
+                                {feature === 'Leaderboard' && (
+                                    <div>
+                                        <h2 className="text-xl md:text-2xl font-semibold mb-4">Leaderboard</h2>
+                                        <p className="text-gray-700">
+                                            Compete with other developers and climb the leaderboard. Track your progress and see how you rank among your peers.
+                                        </p>
+                                    </div>
+                                )}
+
+                                {feature === 'FAQs' && (
+                                    <div>
+                                        <h2 className="text-xl md:text-2xl font-semibold mb-4">FAQs</h2>
+                                        <p className="text-gray-700">
+                                            Find answers to frequently asked questions about Code Leveling, including how to get started, how to earn points, and more.
+                                        </p>
+                                    </div>
+                                )}
+
+                                {feature === 'Contact' && (
+                                    <div>
+                                        <h2 className="text-xl md:text-2xl font-semibold mb-4">Contact</h2>
+                                        <p className="text-gray-700">
+                                            Need help? Reach out to our support team at{' '}
+                                            <a href="mailto:support@codeleveling.com" className="text-blue-600">
+                                                support@codeleveling.com
+                                            </a>
+                                            .
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </>
     );
 };
 
-export default ProfilePage;
+export default DocsPage;

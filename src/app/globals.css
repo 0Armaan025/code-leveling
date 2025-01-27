@@ -29,3 +29,27 @@ body {
   /* background: var(--background); */
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes border-pulse {
+    0% { opacity: 0.2; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.2; }
+  }
+
+  @keyframes text-shimmer {
+    0% { background-position: -100% 0; }
+    100% { background-position: 100% 0; }
+  }
+
+  .animate-border-pulse {
+    animation: border-pulse 3s infinite;
+  }
+
+  .animate-text-shimmer {
+    background-size: 200% auto;
+    animation: text-shimmer 3s linear infinite;
+  }
+
+  .perspective-1000 {
+    transform: perspective(1000px);
+  }

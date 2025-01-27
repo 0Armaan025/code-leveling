@@ -27,49 +27,7 @@ const ProfilePage = () => {
     // Three.js Effect
     const threeContainerRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        if (!threeContainerRef.current) return;
 
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(
-            75,
-            threeContainerRef.current.clientWidth / threeContainerRef.current.clientHeight,
-            0.1,
-            1000
-        );
-        const renderer = new THREE.WebGLRenderer({ alpha: true });
-        renderer.setSize(
-            threeContainerRef.current.clientWidth,
-            threeContainerRef.current.clientHeight
-        );
-        threeContainerRef.current.appendChild(renderer.domElement);
-
-        const geometry = new THREE.TorusGeometry(1, 0.4, 16, 100);
-        const material = new THREE.MeshStandardMaterial({ color: 0x00ffcc });
-        const torus = new THREE.Mesh(geometry, material);
-        scene.add(torus);
-
-        const light = new THREE.PointLight(0xffffff, 1, 100);
-        light.position.set(10, 10, 10);
-        scene.add(light);
-
-        const ambientLight = new THREE.AmbientLight(0x404040);
-        scene.add(ambientLight);
-
-        camera.position.z = 5;
-
-        const animate = () => {
-            requestAnimationFrame(animate);
-            torus.rotation.x += 0.01;
-            torus.rotation.y += 0.01;
-            renderer.render(scene, camera);
-        };
-        animate();
-
-        return () => {
-            threeContainerRef.current?.removeChild(renderer.domElement);
-        };
-    }, []);
 
     // Dropdown options for Best Project
     const bestProjectOptions = [

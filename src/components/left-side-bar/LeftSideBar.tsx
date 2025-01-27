@@ -4,12 +4,10 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const LeftSidebar = () => {
-
-
     // Function to check if a link is active
     const isActive = (path: string) => {
         const currentPath = usePathname();
-        return currentPath === path
+        return currentPath === path;
     };
 
     return (
@@ -17,7 +15,7 @@ const LeftSidebar = () => {
             {/* Logo or Branding */}
             <div className="mb-10">
                 <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-                    CodeLevel
+                    Code-leveling
                 </h1>
             </div>
 
@@ -108,6 +106,28 @@ const LeftSidebar = () => {
                             }`}
                     >
                         Shop
+                    </span>
+                </Link>
+
+                {/* Redeem Link */}
+                <Link
+                    href="/redeem"
+                    className={`flex items-center p-3 rounded-lg transition-all duration-300 hover:bg-gray-800 group ${isActive('/redeem')
+                        ? 'bg-indigo-800 hover:bg-indigo-800'
+                        : 'hover:translate-x-2'
+                        }`}
+                >
+                    <span
+                        className={`text-gray-400 transition-colors duration-300 ${isActive('/redeem') ? 'text-indigo-400' : 'group-hover:text-indigo-400'
+                            }`}
+                    >
+                        🎁
+                    </span>
+                    <span
+                        className={`ml-3 text-gray-300 transition-colors duration-300 ${isActive('/redeem') ? 'text-white font-semibold' : 'group-hover:text-white'
+                            }`}
+                    >
+                        Redeem
                     </span>
                 </Link>
             </nav>
