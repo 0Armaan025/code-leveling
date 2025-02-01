@@ -65,6 +65,29 @@ const LeftSidebar = () => {
                     </span>
                 </Link>
 
+                {/* Lab Link */}
+                <Link
+                    href="/lab"
+                    className={`flex items-center p-3 rounded-lg transition-all duration-300 hover:bg-gray-800 group ${isActive('/lab')
+                        ? 'bg-blue-800 hover:bg-blue-800'
+                        : 'hover:translate-x-2'
+                        }`}
+                >
+                    <span
+                        className={`text-gray-400 transition-colors duration-300 ${isActive('/dashboard') ? 'text-blue-400' : 'group-hover:text-blue-400'
+                            }`}
+                    >
+                        🧪
+                    </span>
+                    <span
+                        className={`ml-3 text-gray-300 transition-colors duration-300 ${isActive('/dashboard') ? 'text-white font-semibold' : 'group-hover:text-white'
+                            }`}
+                    >
+                        Lab
+                    </span>
+                </Link>
+
+
                 {/* Your Items Link */}
                 <Link
                     href="/items"
