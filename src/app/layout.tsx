@@ -5,6 +5,7 @@ import CustomCursor from "@/components/custom-cursor/CustomCursor";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
+import { ThemeProvider } from "next-themes";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -27,18 +28,18 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <UserProvider>
-                <body
-                    className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-                >
-                    <Navbar />
-                    {/* <CustomCursor/> */}
-                    {children}
-                    <Footer />
-
-                </body>
-            </UserProvider>
+        <html lang="en" suppressHydrationWarning> 
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            >
+                <UserProvider>
+                    <ThemeProvider attribute="class">  
+                        <Navbar />
+                        {children}
+                        <Footer />
+                    </ThemeProvider>
+                </UserProvider>
+            </body>
         </html>
     );
 }

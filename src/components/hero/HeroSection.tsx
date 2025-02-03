@@ -33,7 +33,7 @@ const HeroSection = (props: Props) => {
                     <div className="h-4 md:h-8"></div>
 
                     <h4
-                        className="text-lg md:text-xl text-[#a1a1aa] w-full md:w-[40rem]"
+                        className="text-lg md:text-xl dark:text-[#a1a1aa] text-gray-700 w-full md:w-[40rem]"
                         style={{ fontFamily: "Hind Madurai" }}
                     >
                         You get to level-up like never before! Motivation and dopamine at its peaks.
@@ -54,7 +54,7 @@ const HeroSection = (props: Props) => {
                             <input
                                 type="button"
                                 value="See documentation..."
-                                className="mt-4 w-60 md:mt-0 md:ml-4 px-5 py-2 bg-white bg-opacity-10 text-white hover:bg-opacity-15 transition-all cursor-pointer rounded-3xl text-lg font-medium"
+                                className="mt-4 w-60 md:mt-0 md:ml-4 px-5 py-2 bg-white dark:bg-opacity-10 bg-opacity-15 text-white hover:bg-opacity-20 transition-all cursor-pointer rounded-3xl text-lg font-medium"
                                 style={{ fontFamily: 'Montserrat, serif' }}
                             />
                         </Link>
@@ -82,32 +82,32 @@ const HeroSection = (props: Props) => {
             </div>
 
             <div className="flex flex-col justify-center items-center mt-16 mb-8">
-                <h3 className='text-[#68686d] text-lg font-medium' style={{ fontFamily: "Montserrat, serif" }}>Supported by</h3>
+                <h3 className='dark:text-[#68686d] text-gray-900 text-lg font-medium' style={{ fontFamily: "Montserrat, serif" }}>Supported by</h3>
                 <br />
                 <div className="flex flex-row justify-center items-center">
 
 
                     {/* supported by kinda thingy container kinda */}
 
-                    <div className='items-center justify-center text-white rounded-lg bg-[#18181b] hover:bg-opacity-70 transition-all cursor-pointer px-4 py-2 border-[0.5px] border-gray-700 ' style={{ fontFamily: "Montserrat, serif" }}>
+                    <div className='items-center justify-center dark:text-white text-gray-900 rounded-lg dark:bg-[#18181b] bg-white hover:bg-opacity-70 transition-all cursor-pointer px-4 py-2 border-[0.5px] dark:border-gray-700 border-gray-200 ' style={{ fontFamily: "Montserrat, serif" }}>
                         No one :(
                     </div>
-                    <div className='iSupportYa items-center ml-4 justify-center flex flex-row text-white rounded-lg bg-[#18181b] hover:bg-opacity-70 transition-all cursor-pointer px-4 py-2 border-[0.5px] border-gray-700 '>
+                    <div className='iSupportYa items-center ml-4 justify-center flex flex-row dark:text-white text-gray-900 rounded-lg dark:bg-[#18181b] bg-white hover:bg-opacity-70 transition-all cursor-pointer px-4 py-2 border-[0.5px] dark:border-gray-700 border-gray-200'>
                         <h3 style={{ fontFamily: "Montserrat, serif" }} className='text-purple-500'>I will 	&lt;3</h3>
                         <Image src="https://cdn-icons-png.flaticon.com/128/508/508786.png" className='.heartImage ml-2' alt="heart icon" height={20} width={20} />
                     </div>
 
                 </div>
                 <div className="mt-16 flex flex-col justify-center items-center mb-16 hover:cursor-pointer transition-all hover:translate-x-5">
-                    <video width="640" height="480" controls autoPlay={true} className='rounded-md shadow-lg border-[20px] border-[#111113] shadow-gray-700'>
+                    <video width="640" height="480" controls autoPlay={true} className='rounded-md shadow-lg border-[20px] dark:border-[#111113] border-gray-200 shadow-gray-700'>
                         <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
-                    <label className="mt-8 text-xl font-medium" style={{ fontFamily: "Montserrat, serif" }}>Demo of Code-leveling ⬆️</label>
+                    <label className="mt-8 text-xl font-medium dark:text-white text-gray-900" style={{ fontFamily: "Montserrat, serif" }}>Demo of Code-leveling ⬆️</label>
                 </div>
             </div>
 
-            <div className="community mb-16">
+            <div className="community">
                 <Community />
             </div>
         </>
