@@ -18,7 +18,7 @@ const XCard = (props: Props) => {
 
 
 
-                <div className="xCard flex flex-col bg-[#18181b] z-[0] justify-start items-start p-2 rounded-xl relative right-12
+                <div className="xCard flex flex-col  bg-gradient-to-br from-indigo-200 via-blue-100 to-white dark:bg-gradient-to-r dark:from-[#18181c] dark:via-[#090212] dark:to-[#080112] z-[0] justify-start items-start p-2 rounded-xl relative right-12
              hover:cursor-pointer">
                     {/* top section  */}
                     <div className="flex flex-row justify-between items-center">
@@ -30,7 +30,7 @@ const XCard = (props: Props) => {
                         </div>
 
                         <div className="flex flex-col justify-start ml-4 p-2 items-start">
-                            <h3 className='text-lg font-semibold' style={{ fontFamily: "Montserrat, serif" }}>Armaan</h3>
+                            <h3 className='text-lg font-semibold dark:text-white text-gray-900' style={{ fontFamily: "Montserrat, serif" }}>Armaan</h3>
                             <h5 className='text-xs text-[#71717a]' style={{ fontFamily: "Montserrat, serif" }}>@0armaan025</h5>
                         </div>
 

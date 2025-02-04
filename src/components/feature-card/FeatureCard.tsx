@@ -9,14 +9,15 @@ type Props = {
 
 const FeatureCard = (props: Props) => {
     return (
-        <div className="featureCard  sm:h-40 h-auto sm:w-72 w-full hover:cursor-pointer  py-4 px-4 rounded-xl flex flex-col bg-gradient-to-r from-[#18181c] via-[#090212] to-[#080112] bg-opacity-40 backdrop-blur-[0.2px] border border-transparent shadow-[inset_0_4px_6px_rgba(0,0,0,0.3)] hover:shadow-[0_6px_12px_rgba(0,0,0,0.2)] transition-all ease-in-out duration-200 justify-between items-start">
+        <div className="featureCard  sm:h-40 h-auto sm:w-72 w-full hover:cursor-pointer  py-4 px-4 rounded-xl flex flex-col dark:bg-gradient-to-r dark:from-[#18181c] dark:via-[#090212] dark:to-[#080112] bg-gradient-to-br from-indigo-200 via-blue-100 to-white
+ dark:bg-opacity-40 dark:backdrop-blur-[0.2px] dark:border dark:border-transparent dark:shadow-[inset_0_4px_6px_rgba(0,0,0,0.3)] hover:shadow-[0_6px_12px_rgba(0,0,0,0.2)] transition-all ease-in-out duration-200 justify-between items-start shadow-md">
 
             {/* Top section */}
             <div className="flex flex-row justify-start items-center">
                 <div className="bg-[#2a0f45] rounded-full w-10 h-10 p-2">
                     <Image src={props.logoUrl} alt="feature logo" width={80} height={80} />
                 </div>
-                <h3 className="text-[#fff] ml-2 font-semibold text-sm" style={{ fontFamily: "Montserrat, serif" }}>
+                <h3 className="dark:text-[#fff] text-gray-900 ml-2 font-semibold text-sm" style={{ fontFamily: "Montserrat, serif" }}>
                     {props.featureTitle}
                 </h3>
             </div>

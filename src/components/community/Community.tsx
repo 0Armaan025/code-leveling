@@ -9,7 +9,7 @@ const Community = (props: Props) => {
             {/* Header Section */}
             <div className="mb-0 text-center">
                 <h3
-                    className="text-3xl text-white font-semibold"
+                    className="text-3xl dark:text-white text-gray-900 font-semibold"
                     style={{ fontFamily: 'Montserrat, serif' }}
                 >
                     Community
