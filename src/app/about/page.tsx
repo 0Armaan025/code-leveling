@@ -5,14 +5,14 @@ type Props = {};
 const AboutPage = (props: Props) => {
     return (
         <>
-            <div className="aboutPage min-h-screen p-8 bg-gradient-to-br from-gray-900 to-black">
+            <div className="aboutPage min-h-screen p-8 dark:bg-gradient-to-br dark:from-gray-900 dark:to-black bg-gradient-to-br from-indigo-300 via-blue-100 to-white">
                 {/* Main Heading */}
-                <h1 className="text-5xl font-bold mb-12 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent" style={{ fontFamily: 'Montserrat, serif' }}>
+                <h1 className="text-5xl font-bold mb-12 bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent" style={{ fontFamily: 'Montserrat, serif' }}>
                     About Code-Leveling:
                 </h1>
 
                 {/* Bullet Points */}
-                <ul className="space-y-8 list-none pl-6 text-gray-300">
+                <ul className="space-y-8 list-none pl-6 dark:text-gray-300 text-gray-900">
                     {/* Point 1 */}
                     <li className="text-xl pl-4 border-l-4 border-purple-500" style={{ fontFamily: 'Montserrat, serif' }}>
                         <span className="font-semibold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
@@ -55,7 +55,7 @@ const AboutPage = (props: Props) => {
                 </ul>
 
                 {/* Feedback Form */}
-                <div className="mt-16 p-8 bg-gray-800 rounded-lg shadow-lg max-w-2xl mx-auto">
+                <div className="mt-16 p-8 dark:bg-gray-800 bg-white rounded-lg shadow-lg max-w-2xl mx-auto">
                     <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent" style={{ fontFamily: 'Montserrat, serif' }}>
                         Feedback Form
                     </h2>
@@ -65,7 +65,7 @@ const AboutPage = (props: Props) => {
                     <form className="space-y-6">
                         {/* Name Field */}
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-400">
+                            <label htmlFor="name" className="block text-sm font-medium text-gray-500">
                                 Name <span className="text-red-500">*</span>
                             </label>
                             <input
@@ -73,28 +73,28 @@ const AboutPage = (props: Props) => {
                                 id="name"
                                 name="name"
                                 required
-                                className="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                                className="mt-1 block w-full px-4 py-2 dark:bg-gray-700 border-[1px] border-gray-600 outline-none rounded-md dark:text-white text-black focus:ring-1 focus:ring-purple-500 focus:border-purple-500"
                                 placeholder="Enter your name"
                             />
                         </div>
 
                         {/* Email Field */}
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-400">
+                            <label htmlFor="email" className="block text-sm font-medium text-gray-500">
                                 Email (optional)
                             </label>
                             <input
                                 type="email"
                                 id="email"
                                 name="email"
-                                className="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                                className="mt-1 block w-full px-4 py-2 dark:bg-gray-700 border-[1px] border-gray-600 outline-none rounded-md dark:text-white text-black focus:ring-1 focus:ring-purple-500 focus:border-purple-500"
                                 placeholder="Enter your email (if you'd like a response)"
                             />
                         </div>
 
                         {/* Feedback Field */}
                         <div>
-                            <label htmlFor="feedback" className="block text-sm font-medium text-gray-400">
+                            <label htmlFor="feedback" className="block text-sm font-medium text-gray-500">
                                 Feedback <span className="text-red-500">*</span>
                             </label>
                             <textarea
@@ -102,7 +102,7 @@ const AboutPage = (props: Props) => {
                                 name="feedback"
                                 rows={4}
                                 required
-                                className="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                                className="mt-1 block w-full px-4 py-2 dark:bg-gray-700 border-[1px] border-gray-600 outline-none rounded-md dark:text-white text-black focus:ring-1 focus:ring-purple-500 focus:border-purple-500"
                                 placeholder="Share your feedback, suggestions, or just say hi!"
                             />
                         </div>

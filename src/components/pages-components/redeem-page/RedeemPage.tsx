@@ -21,13 +21,13 @@ const RedeemPageComponent = () => {
     };
 
     return (
-        <div className="redeemPage min-h-screen p-4 sm:p-6 bg-black flex items-center justify-center relative overflow-hidden">
+        <div className="redeemPage min-h-screen p-6 dark:bg-black bg-white flex items-center justify-center relative overflow-hidden">
             {/* Animated Background Elements */}
             <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10 animate-pulse"></div>
             <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent"></div>
 
             {/* Main Card */}
-            <div className="relative w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl bg-black rounded-2xl border-2 border-blue-500/30 shadow-2xl p-6 sm:p-8 backdrop-blur-xl transform perspective-1000">
+            <div className="relative w-[700px] dark:bg-black rounded-2xl border-2 border-blue-500/30 shadow-2xl p-8 backdrop-blur-xl transform perspective-1000">
                 {/* Holographic Border Effect */}
                 <div className="absolute inset-0 rounded-2xl border-2 border-blue-500/20 animate-border-pulse"></div>
 
@@ -39,35 +39,39 @@ const RedeemPageComponent = () => {
                     <h1 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500 animate-text-shimmer">
                         SYSTEM REDEEM
                     </h1>
-                    <p className="text-xs sm:text-sm text-cyan-400/80 font-mono">Authorization Level: [★★★☆☆]</p>
+                    <p className="text-sm dark:text-cyan-400/80 text-blue-400 font-mono">Authorization Level: [★★★☆☆]</p>
                 </div>
 
                 {/* Input Fields */}
                 <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
                     <div className="group">
-                        <label className="block text-cyan-400/80 text-xs sm:text-sm font-mono mb-1 sm:mb-2 ml-1">
+                        <label className="block dark:text-cyan-400/80 text-blue-600 text-sm font-mono mb-2 ml-1">
                             REDEEM CODE
                         </label>
-                        <input
-                            type="text"
-                            placeholder="Enter Authorization Code"
-                            value={redeemCode}
-                            onChange={(e) => setRedeemCode(e.target.value)}
-                            className="w-full px-4 py-2 sm:px-5 sm:py-3 bg-black/80 rounded-lg text-cyan-300 border border-blue-500/30 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 placeholder-gray-500 font-mono transition-all"
-                        />
+                        <div className="relative bg-gradient-to-r from-black/80 to-black/60 p-[2px] rounded-lg hover:from-blue-500/30 hover:to-cyan-500/30 transition-all">
+                            <input
+                                type="text"
+                                placeholder="Enter Authorization Code"
+                                value={redeemCode}
+                                onChange={(e) => setRedeemCode(e.target.value)}
+                                className="w-full px-5 py-3 dark:bg-black/80 rounded-[calc(0.5rem-2px)] dark:text-cyan-300 text-blue-400 dark:border border-blue-500/30 focus:border-cyan-400 outline-none focus:ring-2 focus:ring-cyan-500/20 font-mono transition-all placeholder:text-blue-300"
+                            />
+                        </div>
                     </div>
 
                     <div className="group">
-                        <label className="block text-cyan-400/80 text-xs sm:text-sm font-mono mb-1 sm:mb-2 ml-1">
+                        <label className="block dark:text-cyan-400/80 text-blue-600 text-sm font-mono mb-2 ml-1">
                             DEVELOPER ID
                         </label>
-                        <input
-                            type="text"
-                            placeholder="ARMAAN"
-                            value={developerName}
-                            onChange={(e) => setDeveloperName(e.target.value)}
-                            className="w-full px-4 py-2 sm:px-5 sm:py-3 bg-black/80 rounded-lg text-cyan-300 border border-blue-500/30 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 placeholder-gray-500 font-mono transition-all"
-                        />
+                        <div className="relative bg-gradient-to-r from-black/80 to-black/60 p-[2px] rounded-lg hover:from-blue-500/30 hover:to-cyan-500/30 transition-all">
+                            <input
+                                type="text"
+                                placeholder="ARMAAN"
+                                value={developerName}
+                                onChange={(e) => setDeveloperName(e.target.value)}
+                                className="w-full px-5 py-3 dark:bg-black/80 rounded-[calc(0.5rem-2px)] dark:text-cyan-300 placeholder:text-blue-300 text-blue-400 dark:border border-cyan-400 focus:border-cyan-400 outline-none focus:ring-2 focus:ring-cyan-500/20 font-mono transition-all"
+                            />
+                        </div>
                     </div>
                 </div>
 
@@ -93,8 +97,12 @@ const RedeemPageComponent = () => {
                 )}
 
                 {/* System Status Footer */}
-                <div className="mt-6 sm:mt-10 text-center text-xs sm:text-sm text-cyan-500/50 font-mono">
-                    SYSTEM STATUS: OPERATIONAL
+                <div className="mt-10 text-center text-sm dark:text-cyan-500/50 text-blue-500 font-mono">
+                    <div className="inline-flex items-center gap-2">
+                        <span className="animate-pulse">●</span>
+                        SYSTEM STATUS: OPERATIONAL
+                        <span className="animate-pulse">●</span>
+                    </div>
                 </div>
             </div>
         </div>

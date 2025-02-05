@@ -37,35 +37,35 @@ const LeaderboardPage = (props: Props) => {
 
     return (
         <>
-            <div className="leaderboardPage min-h-screen p-8 bg-gradient-to-br from-gray-900 to-black">
+            <div className="leaderboardPage min-h-screen p-8 dark:bg-gradient-to-br dark:from-gray-900 dark:to-black bg-gradient-to-br from-indigo-300 via-blue-100 to-white">
                 {/* Heading */}
-                <h1 className="text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent" style={{ fontFamily: 'Montserrat, serif' }}>
+                <h1 className="text-5xl font-bold mb-8 bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent" style={{ fontFamily: 'Montserrat, serif' }}>
                     Leaderboard
                 </h1>
 
                 {/* Ranking Period Dropdown */}
                 <div className="mb-8">
-                    <label htmlFor="rankingPeriod" className="block text-sm font-medium text-gray-400">
+                    <label htmlFor="rankingPeriod" className="block text-sm font-medium dark:text-gray-400 text-gray-900">
                         Ranking Period
                     </label>
                     <select
                         id="rankingPeriod"
                         value={rankingPeriod}
                         onChange={(e) => setRankingPeriod(e.target.value as 'weekly' | 'all-time')}
-                        className="mt-1 block w-48 px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                        className="mt-1 block w-48 px-4 py-2 dark:bg-gray-700 border dark:border-gray-600 rounded-md dark:text-white text-black focus:ring-1 focus:ring-purple-500 outline-none"
                     >
-                        <option value="weekly">Weekly</option>
-                        <option value="all-time">All-Time</option>
+                        <option value="weekly" >Weekly</option>
+                        <option value="all-time" >All-Time</option>
                     </select>
                 </div>
 
                 {/* Filter Buttons */}
-                <div className="flex space-x-4 mb-8">
+                <div className="flex md:space-x-4 mb-8 flex-wrap gap-2">
                     <button
                         onClick={() => setFilter('devbits')}
-                        className={`px-4 py-2 rounded-md flex items-center space-x-2 transition-all ${filter === 'devbits'
+                        className={`px-4 py-2 rounded-md flex items-center space-x-2 transition-all shadow ${filter === 'devbits'
                             ? 'bg-gradient-to-r from-purple-500 to-pink-600 text-white'
-                            : 'bg-gray-700 text-gray-400 hover:bg-gray-600'
+                            : 'dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600 bg-gray-200 text-gray-900 hover:bg-gray-300'
                             }`}
                     >
                         <img src="https://i.ibb.co/4NjcSnQ/github.png" alt="DevBits Icon" className="w-5 h-5" />
@@ -73,9 +73,9 @@ const LeaderboardPage = (props: Props) => {
                     </button>
                     <button
                         onClick={() => setFilter('coding-time')}
-                        className={`px-4 py-2 rounded-md flex items-center space-x-2 transition-all ${filter === 'coding-time'
+                        className={`px-4 py-2 rounded-md flex items-center space-x-2 transition-all shadow ${filter === 'coding-time'
                             ? 'bg-gradient-to-r from-purple-500 to-pink-600 text-white'
-                            : 'bg-gray-700 text-gray-400 hover:bg-gray-600'
+                            : 'dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600 bg-gray-200 text-gray-900 hover:bg-gray-300'
                             }`}
                     >
                         <img src="https://i.ibb.co/2d8MDpx/profile-user.png" alt="Coding Time Icon" className="w-5 h-5" />
@@ -83,9 +83,9 @@ const LeaderboardPage = (props: Props) => {
                     </button>
                     <button
                         onClick={() => setFilter('language')}
-                        className={`px-4 py-2 rounded-md flex items-center space-x-2 transition-all ${filter === 'language'
+                        className={`px-4 py-2 rounded-md flex items-center space-x-2 transition-all shadow ${filter === 'language'
                             ? 'bg-gradient-to-r from-purple-500 to-pink-600 text-white'
-                            : 'bg-gray-700 text-gray-400 hover:bg-gray-600'
+                            : 'dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600 bg-gray-200 text-gray-900 hover:bg-gray-300'
                             }`}
                     >
                         <img src="https://i.ibb.co/NmndwN9/discord.png" alt="Language Icon" className="w-5 h-5" />
@@ -96,14 +96,14 @@ const LeaderboardPage = (props: Props) => {
                 {/* Language Dropdown (Visible only when Language filter is selected) */}
                 {filter === 'language' && (
                     <div className="mb-8">
-                        <label htmlFor="language" className="block text-sm font-medium text-gray-400">
+                        <label htmlFor="language" className="block text-sm font-medium dark:text-gray-400 text-gray-900">
                             Select Language
                         </label>
                         <select
                             id="language"
                             value={selectedLanguage}
                             onChange={(e) => setSelectedLanguage(e.target.value)}
-                            className="mt-1 block w-48 px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                            className="mt-1 block w-48 px-4 py-2 dark:bg-gray-700 dark:border dark:border-gray-600 bg-white rounded-md dark:text-white text-gray-900 focus:ring-1 focus:ring-purple-500 outline-none"
                         >
                             {languages.map((lang) => (
                                 <option key={lang} value={lang}>
@@ -116,16 +116,16 @@ const LeaderboardPage = (props: Props) => {
 
                 {/* Leaderboard Table */}
                 <div className="overflow-x-auto mb-12">
-                    <table className="min-w-full bg-gray-800 rounded-lg shadow-lg">
+                    <table className="min-w-full dark:bg-gray-800 bg-white rounded-lg shadow-md">
                         <thead>
                             <tr>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs font-medium dark:text-gray-400 dark:bg-gray-900 bg-gray-200 text-gray-900 uppercase tracking-wider rounded-tl-lg">
                                     Rank
                                 </th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs font-medium bg-gray-200 dark:text-gray-400 dark:bg-gray-900 text-gray-900 uppercase tracking-wider">
                                     Name
                                 </th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs font-medium bg-gray-200 rounded-tr-lg dark:text-gray-400 dark:bg-gray-900 text-gray-900 uppercase tracking-wider">
                                     {filter === 'devbits' && 'DevBits'}
                                     {filter === 'coding-time' && 'Coding Time'}
                                     {filter === 'language' && 'Language'}
@@ -134,16 +134,16 @@ const LeaderboardPage = (props: Props) => {
                         </thead>
                         <tbody className="divide-y divide-gray-700">
                             {filteredData.map((user) => (
-                                <tr key={user.rank} className="hover:bg-gray-600 transition-all cursor-pointer">
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">
+                                <tr key={user.rank} className="dark:hover:bg-gray-600 hover:bg-gray-300 transition-all cursor-pointer">
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium dark:text-white text-gray-900">
                                         #{user.rank}
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm dark:text-white text-gray-900">
                                         {user.name}
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm dark:text-white text-gray-900">
                                         {filter === 'devbits' && (
-                                            <div className="flex flex-row p-2 justify-start items-center">
+                                            <div className="flex flex-row p-2 justify-start dark:text-white text-gray-900">
                                                 {user.devbits}
                                                 <Image src="https://i.ibb.co/BjXmDmL/New-Project-7-removebg-preview.png" alt="devbit currency" className="ml-2" height={24} width={24} />
                                             </div>
@@ -166,7 +166,7 @@ const LeaderboardPage = (props: Props) => {
                         {todaysShoutout.map((person, index) => (
                             <div
                                 key={index}
-                                className="p-6 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl "
+                                className="p-6 bg-gradient-to-br from-indigo-200 via-blue-100 to-white dark:bg-gradient-to-r dark:from-[#18181c] dark:via-[#090212] dark:to-[#080112] rounded-lg shadow-lg hover:shadow-xl "
                             >
                                 <div className="flex items-center space-x-4 cursor-pointer">
                                     <Image
@@ -177,8 +177,8 @@ const LeaderboardPage = (props: Props) => {
                                         className="rounded-full"
                                     />
                                     <div>
-                                        <h3 className="text-xl font-semibold text-white">{person.name}</h3>
-                                        <p className="text-gray-400">{person.description}</p>
+                                        <h3 className="text-xl font-semibold dark:text-white text-gray-900">{person.name}</h3>
+                                        <p className="dark:text-gray-400 text-gray-700">{person.description}</p>
                                     </div>
                                 </div>
                                 <div className="mt-4">
