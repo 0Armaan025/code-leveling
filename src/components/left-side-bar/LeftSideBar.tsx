@@ -11,7 +11,7 @@ const LeftSidebar = () => {
     };
 
     return (
-        <div className="leftSidebar w-64 min-h-screen bg-gray-900 text-white p-6 border-r border-gray-800">
+        <div className="leftSidebar w-64 min-h-screen dark:bg-gray-900 dark:text-white bg-gray-200 text-gray-900 p-6 border-r border-gray-800">
             {/* Logo or Branding */}
             <div className="mb-10">
                 <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
@@ -36,7 +36,7 @@ const LeftSidebar = () => {
                         👤
                     </span>
                     <span
-                        className={`ml-3 text-gray-300 transition-colors duration-300 ${isActive('/profile') ? 'text-white font-semibold' : 'group-hover:text-white'
+                        className={`ml-3 dark:text-gray-300 text-gray-900 transition-colors duration-300 ${isActive('/profile') ? 'text-white font-semibold' : 'group-hover:text-white'
                             }`}
                     >
                         Profile
@@ -58,7 +58,7 @@ const LeftSidebar = () => {
                         📊
                     </span>
                     <span
-                        className={`ml-3 text-gray-300 transition-colors duration-300 ${isActive('/dashboard') ? 'text-white font-semibold' : 'group-hover:text-white'
+                        className={`ml-3 dark:text-gray-300 text-gray-900 transition-colors duration-300 ${isActive('/dashboard') ? 'text-white font-semibold' : 'group-hover:text-white'
                             }`}
                     >
                         Dashboard
@@ -80,7 +80,7 @@ const LeftSidebar = () => {
                         🧪
                     </span>
                     <span
-                        className={`ml-3 text-gray-300 transition-colors duration-300 ${isActive('/dashboard') ? 'text-white font-semibold' : 'group-hover:text-white'
+                        className={`ml-3 dark:text-gray-300 text-gray-900 transition-colors duration-300 ${isActive('/lab') ? 'text-white font-semibold' : 'group-hover:text-white'
                             }`}
                     >
                         Lab
@@ -103,7 +103,7 @@ const LeftSidebar = () => {
                         🛍️
                     </span>
                     <span
-                        className={`ml-3 text-gray-300 transition-colors duration-300 ${isActive('/items') ? 'text-white font-semibold' : 'group-hover:text-white'
+                        className={`ml-3 dark:text-gray-300 text-gray-900 transition-colors duration-300 ${isActive('/items') ? 'text-white font-semibold' : 'group-hover:text-white'
                             }`}
                     >
                         Your Items
@@ -125,7 +125,7 @@ const LeftSidebar = () => {
                         🏪
                     </span>
                     <span
-                        className={`ml-3 text-gray-300 transition-colors duration-300 ${isActive('/shop') ? 'text-white font-semibold' : 'group-hover:text-white'
+                        className={`ml-3 dark:text-gray-300 text-gray-900 transition-colors duration-300 ${isActive('/shop') ? 'text-white font-semibold' : 'group-hover:text-white'
                             }`}
                     >
                         Shop
@@ -147,7 +147,7 @@ const LeftSidebar = () => {
                         🎁
                     </span>
                     <span
-                        className={`ml-3 text-gray-300 transition-colors duration-300 ${isActive('/redeem') ? 'text-white font-semibold' : 'group-hover:text-white'
+                        className={`ml-3 dark:text-gray-300 text-gray-900 transition-colors duration-300 ${isActive('/redeem') ? 'text-white font-semibold' : 'group-hover:text-white'
                             }`}
                     >
                         Redeem

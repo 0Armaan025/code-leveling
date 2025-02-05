@@ -81,7 +81,7 @@ const ProfilePage = () => {
     ];
 
     return (
-        <div className="profilePage min-h-screen p-6 bg-black flex items-center justify-center relative overflow-hidden">
+        <div className="profilePage min-h-screen p-6 bg-white dark:bg-black  flex items-center justify-center relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 animate-pulse"></div>
             <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent"></div>
@@ -94,7 +94,7 @@ const ProfilePage = () => {
             ></div>
 
             {/* Profile Card */}
-            <div className="relative w-full max-w-[900px] bg-black/90 rounded-xl border-2 border-blue-500/30 shadow-xl p-6 backdrop-blur-xl">
+            <div className="relative w-full max-w-[900px] dark:bg-black/90 bg-white/90 rounded-xl border-2 border-blue-500/30 shadow-xl p-6 backdrop-blur-xl">
                 {/* Holographic Effects */}
                 <div className="absolute inset-0 rounded-xl border-2 border-blue-500/20 animate-border-pulse"></div>
                 <div className="absolute inset-x-0 top-1/2 h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-30"></div>
@@ -102,7 +102,7 @@ const ProfilePage = () => {
                 <div className="relative flex flex-col md:flex-row h-full">
                     {/* Left Section */}
                     <div className="w-full md:w-1/3 flex flex-col items-center justify-center p-4 border-b md:border-b-0 md:border-r border-blue-500/30">
-                        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-black to-gray-900 flex items-center justify-center overflow-hidden border-4 border-cyan-500/50 shadow-xl">
+                        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-black to-gray-900 flex items-center justify-center overflow-hidden border-4 dark:border-cyan-500/50 border-blue-500 shadow-xl">
                             <img
                                 src="https://via.placeholder.com/150"
                                 alt="Profile"
@@ -116,10 +116,10 @@ const ProfilePage = () => {
                                 onChange={(e) =>
                                     handleInputChange("realName", e.target.value)
                                 }
-                                className="mt-4 w-3/4 bg-black/50 text-cyan-300 text-center p-2 rounded-md border border-cyan-500/30 focus:outline-none font-mono"
+                                className="mt-4 w-3/4 dark:bg-black/50 bg-white dark:text-cyan-300 text-blue-500 text-center p-2 rounded-md border dark:border-cyan-500/30 border-blue-500 focus:outline-none font-mono"
                             />
                         ) : (
-                            <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400 mt-4">
+                            <h1 className="text-2xl font-bold text-transparent bg-clip-text dark:bg-gradient-to-r dark:from-cyan-300 dark:to-blue-400 bg-gradient-to-r from-blue-400 to-cyan-400 mt-4">
                                 {userData.realName}
                             </h1>
                         )}
@@ -130,10 +130,10 @@ const ProfilePage = () => {
                                 onChange={(e) =>
                                     handleInputChange("developerName", e.target.value.replace(/^@/, ""))
                                 }
-                                className="mt-2 w-3/4 bg-black/50 text-cyan-300 text-center p-2 rounded-md border border-cyan-500/30 focus:outline-none font-mono"
+                                className="mt-4 w-3/4 dark:bg-black/50 bg-white dark:text-cyan-300 text-blue-500 text-center p-2 rounded-md border dark:border-cyan-500/30 border-blue-500 focus:outline-none font-mono"
                             />
                         ) : (
-                            <p className="text-cyan-400 text-sm font-mono mt-2">
+                            <p className="dark:text-cyan-400 text-blue-500 text-sm font-mono mt-2">
                                 @{userData.developerName}
                             </p>
                         )}
@@ -152,8 +152,8 @@ const ProfilePage = () => {
                                 ["XP", "xp"]
                             ].map(([label, key]) => (
                                 <div key={key}>
-                                    <label className="text-sm text-cyan-400/80 font-mono">{label}</label>
-                                    <p className="text-cyan-300 font-mono">{userData[key]}</p>
+                                    <label className="text-sm dark:text-cyan-400/80 text-blue-700 font-mono">{label}</label>
+                                    <p className="dark:text-cyan-300 text-blue-500 font-mono">{userData[key]}</p>
                                 </div>
                             ))}
 
@@ -163,49 +163,49 @@ const ProfilePage = () => {
                                 ["Favorite Language", "favoriteLanguage"],
                             ].map(([label, key]) => (
                                 <div key={key}>
-                                    <label className="text-sm text-cyan-400/80 font-mono">{label}</label>
+                                    <label className="text-sm dark:text-cyan-400/80 text-blue-700 font-mono">{label}</label>
                                     {isEditing ? (
                                         <input
                                             type="text"
                                             value={userData[key]}
                                             onChange={(e) => handleInputChange(key, e.target.value)}
-                                            className="w-full bg-black/50 text-cyan-300 p-2 rounded-md border border-cyan-500/30 focus:outline-none font-mono"
+                                            className="w-full dark:bg-black/50 bg-white dark:text-cyan-300 text-blue-500 p-2 rounded-md border dark:border-cyan-500/30 border-blue-500 focus:outline-none font-mono"
                                         />
                                     ) : (
-                                        <p className="text-cyan-300 font-mono">{userData[key]}</p>
+                                        <p className="dark:text-cyan-300 text-blue-500 font-mono">{userData[key]}</p>
                                     )}
                                 </div>
                             ))}
 
                             {/* Best Project Dropdown */}
                             <div>
-                                <label className="text-sm text-cyan-400/80 font-mono">Best Project</label>
+                                <label className="text-sm dark:text-cyan-400/80 text-blue-700 font-mono">Best Project</label>
                                 {isEditing ? (
                                     <select
                                         value={userData.bestProject}
                                         onChange={(e) => handleInputChange("bestProject", e.target.value)}
-                                        className="w-full bg-black/50 text-cyan-300 p-2 rounded-md border border-cyan-500/30 focus:outline-none font-mono"
+                                        className="w-full dark:bg-black/50 bg-white dark:text-cyan-300 text-blue-500 p-2 rounded-md border dark:border-cyan-500/30 border-blue-500 focus:outline-none font-mono"
                                     >
                                         {bestProjectOptions.map((option) => (
-                                            <option key={option} value={option} className="bg-black">
+                                            <option key={option} value={option} className="dark:bg-black">
                                                 {option}
                                             </option>
                                         ))}
                                     </select>
                                 ) : (
-                                    <p className="text-cyan-300 font-mono">{userData.bestProject}</p>
+                                    <p className="dark:text-cyan-300 text-blue-500 font-mono">{userData.bestProject}</p>
                                 )}
                             </div>
                         </div>
 
                         {/* Public/Private Toggle */}
                         <div className="flex items-center justify-between">
-                            <span className="text-sm text-cyan-400/80 font-mono">
+                            <span className="text-sm dark:text-cyan-400/80 text-blue-700 font-mono">
                                 {isPrivate ? "Private" : "Public"}
                             </span>
                             <button
                                 onClick={toggleProfileVisibility}
-                                className={`w-12 h-6 rounded-full p-1 transition-colors duration-200 ${isPrivate ? "bg-red-600" : "bg-cyan-600"
+                                className={`w-12 h-6 rounded-full p-1 transition-colors duration-200 ${isPrivate ? "bg-red-600" : "dark:bg-cyan-600 bg-blue-500"
                                     }`}
                             >
                                 <div
@@ -227,10 +227,10 @@ const ProfilePage = () => {
 
                 {/* System Footer */}
                 <div className="mt-6 pt-4 border-t border-cyan-500/20">
-                    <div className="flex justify-between items-center text-sm text-cyan-500/50 font-mono">
+                    <div className="flex justify-between items-center text-sm dark:text-cyan-500/50 text-blue-700 font-mono">
                         <div className="flex items-center gap-2">
                             <span className="animate-pulse">◈</span>
-                            PROFILE STATUS: {isPrivate ? "PRIVATE" : "PUBLIC"}
+                            PROFILE STATUS: <span className="text-green-500/80"> {isPrivate ? "PRIVATE" : "PUBLIC"} </span>
                         </div>
                         <div>
                             SYSTEM STATUS: <span className="text-green-500/80">OPERATIONAL</span>
