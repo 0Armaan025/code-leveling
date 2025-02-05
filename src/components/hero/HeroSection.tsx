@@ -17,11 +17,12 @@ type Props = {}
 const HeroSection = (props: Props) => {
     return (
         <>
-            <div className="heroSection flex flex-col md:flex-row justify-start items-start md:items-start">
+            <div className="heroSection flex flex-col md:flex-row justify-start items-start">
                 {/* Left Section */}
-                <div className="flex flex-col p-4 mt-16 justify-start ml-9 items-start md:items-start">
+                <div className="flex md:flex-row flex-col md:space-x-44 p-4 mt-16 justify-start md:ml-9 items-start gap-6 md:gap-0">
+                    <div className="flex flex-col gap-4 items-start justify-start">
                     <h3
-                        className="text-4xl md:text-6xl text-white font-semibold md:w-[40rem] leading-snug md:leading-[4rem]"
+                        className="text-4xl md:text-6xl text-white font-semibold md:w-[40rem] w-[20rem] leading-snug md:leading-[4rem]"
                         style={{ fontFamily: "Montserrat, serif" }}
                     >
                         Get <span className="text-[#DF98FB]">
@@ -29,11 +30,8 @@ const HeroSection = (props: Props) => {
                         </span> to turn yourself into a coding machine!
                     </h3>
 
-                    {/* Spacing */}
-                    <div className="h-4 md:h-8"></div>
-
                     <h4
-                        className="text-lg md:text-xl dark:text-[#a1a1aa] text-gray-700 w-full md:w-[40rem]"
+                        className="text-lg md:text-xl dark:text-[#a1a1aa] text-gray-700 w-[20rem] md:w-[40rem]"
                         style={{ fontFamily: "Hind Madurai" }}
                     >
                         You get to level-up like never before! Motivation and dopamine at its peaks.
@@ -59,22 +57,21 @@ const HeroSection = (props: Props) => {
                             />
                         </Link>
                     </div>
-                </div>
-
-                {/* Right Section */}
-                <div className="hidden md:flex flex-col ml-8 justify-center items-center relative">
-                    <div className="elixirDiv right-20 mt-8">
-                        <XCard />
-                        <ElixirOfLife />
                     </div>
-                    <ThemeToggleBtn />
-                    <CodeLevelingLogo />
+                    {/* Right Section */}
+                    <div className="flex items-start md:items-center md:flex-row flex-col-reverse mb-16 nd:gap-0 gap-6">
+                        <div className="elixirDiv">
+                            <XCard />
+                            <ElixirOfLife />
+                        </div>
+                        <div className="flex flex-col space-y-16 items-center">
+                        <ThemeToggleBtn />
+                        <CodeLevelingLogo />
+                        </div>
+                    </div>
                 </div>
-
-
-
             </div>
-            <div className="flex flex-col mb-8 sm:flex-row justify-start ml-8 items-center sm:space-x-4 space-y-8 sm:space-y-0">
+            <div className="flex flex-col mb-8 sm:flex-row justify-start md:ml-8 p-4 items-center sm:space-x-4 space-y-8 sm:space-y-0">
                 <FeatureCard logoUrl="https://cdn-icons-png.flaticon.com/128/1067/1067357.png" featureContent='Get a great boost in your coding journey! ' featureTitle='Coding boost!' />
                 <FeatureCard logoUrl="https://cdn-icons-png.flaticon.com/128/12663/12663290.png" featureContent='Analyse the time spent on projects and tech-stacks you use!' featureTitle='Project insights!' />
                 <FeatureCard logoUrl="https://cdn-icons-png.flaticon.com/128/2817/2817958.png" featureContent='Level up and be on the leaderboard!' featureTitle='Ranking system!' />
