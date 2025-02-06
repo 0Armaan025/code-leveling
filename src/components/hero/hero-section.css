@@ -1,7 +1,36 @@
 .heroSection {
-    width: 100%;
-    height: 100%;
-    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4rem;
+}
+
+/* Left Section */
+.heroSection .left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 42rem;
+    text-align: center;
+}
+
+/* Right Section */
+.heroSection .right-section {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .heroSection {
+        padding: 0 2rem;
+    }
+
+    .heroSection .right-section {
+        gap: 2rem;
+    }
 }
 
 .iSupportYa:hover,

@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-
+import LOGO_LIGHT from "../../../public/logo_light.png";
+import LOGO_DARK from "../../../public/logo_dark.png";
 import './navbar.css';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
@@ -11,27 +12,19 @@ type Props = {};
 
 const Navbar = (props: Props) => {
     const { theme, setTheme } = useTheme();
-    const [isSidebarOpen, setSidebarOpen] = useState(false);
-    const pathname = usePathname(); // Get the current path
-    const [mounted, setMounted] = useState(false);
-
-    const LOGO_LIGHT = "/logo_light.png";
-    const LOGO_DARK = "/logo_dark.png";
 
     useEffect(() => {
-        setMounted(true);
+        // Ensure the theme is set correctly on initial load
         if (!theme) {
-            setTheme('light');
+            setTheme('light'); // Default to light theme if no theme is set
         }
     }, [theme, setTheme]);
-
-    if (!mounted) return null; // Prevents hydration error
-
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
+    const pathname = usePathname(); // Get the current path
 
     const toggleSidebar = () => {
         setSidebarOpen(!isSidebarOpen);
-    }
-
+    };
 
     // Function to determine the text style based on the current path
     const getLinkStyle = (path: string) => {
@@ -48,8 +41,11 @@ const Navbar = (props: Props) => {
                 {/* Logo and Title Section */}
                 <div className="flex items-center">
                     <div className="flex items-center dark:bg-white bg-gray-900 h-8 w-8 rounded-md">
-                        <Link href="/"><Image src={theme === 'dark' ? LOGO_LIGHT : LOGO_DARK} alt="logo" width={40} height={40}
-
+                        <Link href="/"><Image
+                            src={theme === 'dark' ? LOGO_LIGHT : LOGO_DARK}
+                            alt="logo"
+                            width={40}
+                            height={40}
                             className="hover:cursor-pointer transition-all hover:shadow-md dark:hover:shadow-gray-700"
                         /></Link>
                     </div>
@@ -132,7 +128,7 @@ const Navbar = (props: Props) => {
                             Close
                         </button>
                         <ul className="space-y-4">
-                            <li className={`cursor-pointer ${getLinkStyle('/docs')}`}>Docs</li>
+                            <Link href="/docs"><li className={`cursor-pointer ${getLinkStyle('/docs')}`}>Docs</li></Link>
                             <li className={`cursor-pointer ${getLinkStyle('/about')}`}>About</li>
                             <li className={`cursor-pointer ${getLinkStyle('/leaderboard')}`}>Leaderboard</li>
                             <li className="text-white hover:text-gray-400 cursor-pointer">GitHub</li>

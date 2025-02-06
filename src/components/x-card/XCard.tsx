@@ -18,7 +18,7 @@ const XCard = (props: Props) => {
 
 
 
-                <div className="xCard flex flex-col  bg-gradient-to-br from-indigo-200 via-blue-100 to-white dark:bg-gradient-to-r dark:from-[#18181c] dark:via-[#090212] dark:to-[#080112] z-[0] justify-start items-start p-2 rounded-xl relative md:right-12
+                <div className="xCard flex flex-col  bg-gradient-to-br from-indigo-200 via-blue-100 to-white dark:bg-gradient-to-r dark:from-[#18181c] dark:via-[#090212] dark:to-[#080112] z-[0] justify-start items-start p-2 rounded-xl relative md:right-12 w-[23rem]
              hover:cursor-pointer">
                     {/* top section  */}
                     <div className="flex flex-row justify-between items-center">
@@ -58,13 +58,13 @@ const XCard = (props: Props) => {
 
 
                     <div className="flex flex-col mt-3 justify-start items-start w-72">
-                        <h2 className='ml-1 text-[#71717a] text-sm' style={{ fontFamily: "Montserrat, serif" }}><span className='font-semibold'>256</span> Following | <span className='font-semibold'>74</span> Followers</h2>
+                        <h2 className='ml-1 text-[#71717a] text-sm' style={{ fontFamily: "Montserrat, serif" }}><span className='font-semibold'>256</span> Following | <span className='font-semibold'>75</span> Followers</h2>
 
                     </div>
 
                 </div>
 
-               
+
             </div>
         </>
     );
