@@ -1,8 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import LOGO_LIGHT from "../../../public/logo_light.png";
-import LOGO_DARK from "../../../public/logo_dark.png";
+
 import './navbar.css';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
@@ -11,13 +10,28 @@ import { useTheme } from 'next-themes';
 type Props = {};
 
 const Navbar = (props: Props) => {
-    const {theme} = useTheme()
+    const { theme, setTheme } = useTheme();
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const pathname = usePathname(); // Get the current path
+    const [mounted, setMounted] = useState(false);
+
+    const LOGO_LIGHT = "/logo_light.png";
+    const LOGO_DARK = "/logo_dark.png";
+
+    useEffect(() => {
+        setMounted(true);
+        if (!theme) {
+            setTheme('light');
+        }
+    }, [theme, setTheme]);
+
+    if (!mounted) return null; // Prevents hydration error
+
 
     const toggleSidebar = () => {
         setSidebarOpen(!isSidebarOpen);
-    };
+    }
+
 
     // Function to determine the text style based on the current path
     const getLinkStyle = (path: string) => {
@@ -34,11 +48,8 @@ const Navbar = (props: Props) => {
                 {/* Logo and Title Section */}
                 <div className="flex items-center">
                     <div className="flex items-center dark:bg-white bg-gray-900 h-8 w-8 rounded-md">
-                        <Link href="/"><Image
-                            src={theme === 'dark' ? LOGO_LIGHT : LOGO_DARK }
-                            alt="logo"
-                            width={40}
-                            height={40}
+                        <Link href="/"><Image src={theme === 'dark' ? LOGO_LIGHT : LOGO_DARK} alt="logo" width={40} height={40}
+
                             className="hover:cursor-pointer transition-all hover:shadow-md dark:hover:shadow-gray-700"
                         /></Link>
                     </div>

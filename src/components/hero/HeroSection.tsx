@@ -1,20 +1,34 @@
-"use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import './hero-section.css';
-import ScribbleText from '../scribble-text/ScribbleText';
-import ElixirOfLife from '../elixir/elixir_of_life';
-import XCard from '../x-card/XCard';
+
+
+
 import Image from 'next/image';
-import ThemeToggleBtn from '../theme-toggle/ThemeToggleBtn';
+
 import CodeLevelingLogo from '../code-leveling-logo/CodeLevelingLogo';
 import FeatureCard from '../feature-card/FeatureCard';
+
+
+const ThemeToggleBtn = dynamic(() => import('../theme-toggle/ThemeToggleBtn'), { ssr: false });
+const ScribbleText = dynamic(() => import('../scribble-text/ScribbleText'), { ssr: false });
+const XCard = dynamic(() => import('../x-card/XCard'), { ssr: false });
+const ElixirOfLife = dynamic(() => import('../elixir/elixir_of_life'), { ssr: false });
+
 
 import Community from '../community/Community';
 import Link from 'next/link';
 
-type Props = {}
+type Props = {};
 
 const HeroSection = (props: Props) => {
+
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     return (
         <>
             <div className="heroSection flex flex-col md:flex-row justify-start items-start md:items-start">
@@ -99,7 +113,7 @@ const HeroSection = (props: Props) => {
 
                 </div>
                 <div className="mt-16 flex flex-col justify-center items-center mb-16 hover:cursor-pointer transition-all hover:translate-x-5">
-                    <video width="640" height="480" controls autoPlay={true} className='rounded-md shadow-lg border-[20px] dark:border-[#111113] border-gray-200 shadow-gray-700'>
+                    <video width="640" height="480" controls autoPlay={mounted} className='rounded-md shadow-lg border-[20px] dark:border-[#111113] border-gray-200 shadow-gray-700'>
                         <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
