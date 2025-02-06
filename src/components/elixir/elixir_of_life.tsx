@@ -4,7 +4,7 @@ import './elixir.css';
 
 const ElixirOfLife = () => {
   return (
-    <div className="wrapperOfElixir perspective-500 relative right-12 top-8">
+    <div className="wrapperOfElixir perspective-500 relative md:right-12 top-8">
     <div className="elixirDiv relative bg-transparent border cursor-pointer transition-all  border-blue-500 rounded-lg p-6 shadow-lg max-w-sm mx-auto text-white">
 
 

@@ -23,7 +23,7 @@ const ThemeToggleBtn = () => {
   };
 
   return (
-    <div className="themeToggleBtn flex items-center justify-center relative left-60 bottom-60 dark:bg-[#18191c] bg-white px-3 py-2 outline-none border-none rounded-3xl">
+    <div className="themeToggleBtn flex items-center justify-center relative dark:bg-[#18191c] bg-white px-3 py-2 outline-none border-none rounded-3xl w-20">
       <button
         onClick={toggleTheme}
         className={`relative inline-flex border-none items-center h-6 w-12 rounded-full ${
