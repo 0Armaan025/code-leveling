@@ -43,16 +43,18 @@ const HeroSection = () => {
             <div className={`min-h-screen bg-gradient-to-br transition-all duration-500 ${mounted ? 'dark:from-gray-900 dark:to-gray-800 from-sky-300 to-indigo-400' : 'from-blue-200 to-purple-400'}`}>
                 {/* Updated Background Gradient */}
                 <div className="container mx-auto px-4 py-12 relative">
-                    <div className="flex flex-col md:flex-row items-start gap-12">
+                    <div className="flex flex-col md:flex-row items-start gap-12 space-x-20">
                         {/* Left Section */}
-                        <div className="w-full md:w-1/2 space-y-8">
-                            <h3 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white transition-colors duration-300`}>
-                                Get <span className="text-blue-600"><ScribbleText>coding boost</ScribbleText></span> to turn yourself into a coding machine!
-                            </h3>
+                        <div className="w-full md:w-1/2 space-y-20">
+                            <div className="space-y-12 w-full">
+                                <h3 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white transition-colors duration-300`}>
+                                    Get <span className="text-blue-600"><ScribbleText>coding boost</ScribbleText></span> to turn yourself into a coding machine!
+                                </h3>
 
-                            <p className={`text-lg sm:text-xl leading-relaxed transition-all duration-300 ${mounted ? 'dark:text-gray-200 text-gray-700' : 'dark:text-gray-700 text-gray-200'}`}>
-                                Level up like never before! Motivation and dopamine at their peak.
-                            </p>
+                                <p className={`text-lg sm:text-xl leading-relaxed transition-all duration-300 ${mounted ? 'dark:text-gray-200 text-gray-700' : 'dark:text-gray-700 text-gray-200'}`}>
+                                    Level up like never before! Motivation and dopamine at their peak.
+                                </p>
+                            </div>
 
                             {/* Buttons */}
                             <div className="flex flex-col sm:flex-row gap-4">
@@ -74,11 +76,13 @@ const HeroSection = () => {
 
                         {/* Right Section - Only visible on desktop */}
                         {!isMobile && (
-                            <div className="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 space-y-8">
+                            <div className="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 space-y-8">
                                 <XCard />
                                 <ElixirOfLife />
+                                <div className=" flex flex-col items-center justify-center space-y-10">
                                 <ThemeToggleBtn />
                                 <CodeLevelingLogo />
+                                </div>
                             </div>
                         )}
                     </div>

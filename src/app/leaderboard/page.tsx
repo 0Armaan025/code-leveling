@@ -28,7 +28,7 @@ const LeaderboardPage = () => {
 
     return (
         <div className="leaderboardPage min-h-screen p-8 dark:bg-black bg-gradient-to-r from-sky-300 to-indigo-400 dark:from-gray-900 dark:to-gray-800">
-            <h1 className="text-5xl font-extrabold mb-8 text-gray-900 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-purple-400 dark:to-pink-500" style={{ fontFamily: "Montserrat, serif" }}>
+            <h1 className="md:text-5xl text-4xl font-extrabold mb-8 text-gray-900 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-purple-400 dark:to-pink-500" style={{ fontFamily: "Montserrat, serif" }}>
                 Leaderboard 🏆
             </h1>
 

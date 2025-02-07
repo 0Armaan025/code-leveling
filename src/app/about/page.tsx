@@ -7,8 +7,8 @@ const AboutPage = (props: Props) => {
         <>
             <div className="aboutPage min-h-screen p-8 dark:bg-black bg-gradient-to-r from-sky-300 to-indigo-400 dark:from-gray-900 dark:to-gray-800">
                 {/* Main Heading */}
-                <h1 className="text-5xl font-bold mb-12 dark:bg-gradient-to-r dark:from-purple-500 dark:to-pink-600 dark:bg-clip-text dark:text-transparent text-gray-900 font-bold" style={{ fontFamily: 'Montserrat, serif' }}>
-                    About Code-Leveling:
+                <h1 className="md:text-5xl text-4xl flex flex-col md:block mb-12 dark:bg-gradient-to-r dark:from-purple-500 dark:to-pink-600 dark:bg-clip-text dark:text-transparent text-gray-900 font-bold" style={{ fontFamily: 'Montserrat, serif' }}>
+                    About <span>Code-Leveling:</span>
                 </h1>
 
                 {/* Bullet Points */}
