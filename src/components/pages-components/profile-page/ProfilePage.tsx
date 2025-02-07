@@ -81,7 +81,7 @@ const ProfilePage = () => {
     ];
 
     return (
-        <div className="profilePage min-h-screen p-6 bg-white dark:bg-black  flex items-center justify-center relative overflow-hidden">
+        <div className="profilePage min-h-screen p-6 dark:bg-black bg-gradient-to-r from-sky-300 to-indigo-400 dark:from-gray-900 dark:to-gray-800  flex items-center justify-center relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 animate-pulse"></div>
             <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent"></div>

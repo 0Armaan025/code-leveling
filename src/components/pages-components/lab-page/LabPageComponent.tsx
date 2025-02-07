@@ -43,15 +43,15 @@ const LabPageComponent = () => {
     ];
 
     return (
-        <div className="flex items-center justify-center min-h-screen p-4 dark:bg-black bg-white relative overflow-hidden">
+        <div className="flex items-center justify-center min-h-screen p-4 dark:bg-black bg-gradient-to-r from-sky-300 to-indigo-400 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 animate-pulse"></div>
             <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 to-transparent"></div>
 
             {/* Tablet Structure */}
-            <div className="relative w-[900px] h-[500px] dark:bg-black/90 bg-white/90 border-4 border-blue-600/50 rounded-[30px] shadow-2xl p-4 backdrop-blur-xl flex overflow-hidden">
+            <div className="relative w-full sm:w-[900px] h-auto sm:h-[500px] dark:bg-black/90 bg-white/90 border-4 border-blue-600/50 rounded-[30px] shadow-2xl p-4 backdrop-blur-xl flex flex-col sm:flex-row overflow-hidden">
                 {/* Left Sidebar */}
-                <div className="w-[220px] dark:bg-gradient-to-b dark:from-gray-800/80 dark:to-black/90 bg-gradient-to-b from-gray-200 to-white border-r-4 border-blue-700/40 p-6 flex flex-col space-y-6 text-cyan-300 font-mono text-lg">
+                <div className="w-full sm:w-[220px] dark:bg-gradient-to-b dark:from-gray-800/80 dark:to-black/90 bg-gradient-to-b from-gray-200 to-white border-b-4 sm:border-r-4 border-blue-700/40 p-6 flex flex-col space-y-6 text-cyan-300 font-mono text-lg">
                     {['stats', 'tasks', 'achievements', 'upgrades'].map(tab => (
                         <div key={tab} onClick={() => setActiveTab(tab)}
                             className={`p-3 sm:p-5 bg-gradient-to-r from-blue-800 to-cyan-600 rounded-lg text-center cursor-pointer hover:scale-105 transition font-extrabold shadow-lg hover:shadow-cyan-500/50 ${activeTab === tab ? 'border-2 border-cyan-400' : ''}`}>
@@ -61,12 +61,12 @@ const LabPageComponent = () => {
                 </div>
 
                 {/* Content */}
-                <div className="relative flex-1 dark:bg-black/80 bg-white rounded-xl shadow-inner p-8 dark:text-cyan-300 text-blue-500 font-mono text-md overflow-y-auto border-l-4 border-blue-700/20">
+                <div className="relative flex-1 dark:bg-black/80 bg-white rounded-xl shadow-inner p-8 dark:text-cyan-300 text-blue-500 font-mono text-md overflow-y-auto border-b-4 sm:border-l-4 border-blue-700/20">
                     {/* Stats Tab */}
                     {activeTab === 'stats' && (
                         <div>
                             <h1 className="text-xl font-bold text-center mb-4">PLAYER STATS</h1>
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="p-4 dark:bg-gray-800 bg-gray-200 rounded-lg flex items-center space-x-3">
                                     <FaStar className="text-yellow-400 text-2xl" />
                                     <p className="text-lg font-bold">Level: {playerStats.level}</p>
@@ -121,6 +121,7 @@ const LabPageComponent = () => {
                         </div>
                     )}
 
+                    {/* Upgrades Tab */}
                     {activeTab === 'upgrades' && (
                         <div className="text-center">
                             <h1 className="text-xl font-bold mb-4">UPGRADES</h1>

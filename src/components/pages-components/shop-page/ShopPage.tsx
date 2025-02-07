@@ -55,7 +55,7 @@ const ShopPageComponent = () => {
     };
 
     return (
-        <div className="shopPage min-h-screen p-4 dark:bg-black bg-white flex items-start justify-center relative overflow-hidden">
+        <div className="shopPage min-h-screen p-4 dark:bg-black bg-gradient-to-r from-sky-300 to-indigo-400 dark:from-gray-900 dark:to-gray-800 flex items-start justify-center relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 animate-pulse"></div>
             <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent"></div>
@@ -156,7 +156,7 @@ const ShopPageComponent = () => {
                     <div className="flex justify-between items-center text-xs dark:text-cyan-500/50 text-blue-600 font-mono">
                         <div className="flex items-center gap-2">
                             <span className="animate-pulse">◈</span>
-                            ACTIVE INVENTORY: <span className="text-green-500/80">{shopItems.length} ITEMS </span> 
+                            ACTIVE INVENTORY: <span className="text-green-500/80">{shopItems.length} ITEMS </span>
                         </div>
                         <div>
                             SYSTEM STATUS: <span className="text-green-500/80">OPERATIONAL</span>

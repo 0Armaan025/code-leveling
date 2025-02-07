@@ -21,7 +21,7 @@ const RedeemPageComponent = () => {
     };
 
     return (
-        <div className="redeemPage min-h-screen p-6 dark:bg-black bg-white flex items-center justify-center relative overflow-hidden">
+        <div className="redeemPage min-h-screen p-6 dark:bg-black bg-gradient-to-r from-sky-300 to-indigo-400 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center relative overflow-hidden">
             {/* Animated Background Elements */}
             <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10 animate-pulse"></div>
             <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent"></div>
@@ -36,16 +36,16 @@ const RedeemPageComponent = () => {
 
                 {/* Header */}
                 <div className="text-center mb-6 sm:mb-8 space-y-2">
-                    <h1 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500 animate-text-shimmer">
+                    <h1 className="text-3xl sm:text-4xl font-bold  text-white dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-blue-400 dark:to-cyan-500 dark:animate-text-shimmer">
                         SYSTEM REDEEM
                     </h1>
-                    <p className="text-sm dark:text-cyan-400/80 text-blue-400 font-mono">Authorization Level: [★★★☆☆]</p>
+                    <p className="text-sm dark:text-cyan-400/80 text-white font-mono">Authorization Level: [★★★☆☆]</p>
                 </div>
 
                 {/* Input Fields */}
                 <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
                     <div className="group">
-                        <label className="block dark:text-cyan-400/80 text-blue-600 text-sm font-mono mb-2 ml-1">
+                        <label className="block dark:text-cyan-400/80 text-white text-sm font-mono mb-2 ml-1">
                             REDEEM CODE
                         </label>
                         <div className="relative bg-gradient-to-r from-black/80 to-black/60 p-[2px] rounded-lg hover:from-blue-500/30 hover:to-cyan-500/30 transition-all">
@@ -60,7 +60,7 @@ const RedeemPageComponent = () => {
                     </div>
 
                     <div className="group">
-                        <label className="block dark:text-cyan-400/80 text-blue-600 text-sm font-mono mb-2 ml-1">
+                        <label className="block dark:text-cyan-400/80 text-white text-sm font-mono mb-2 ml-1">
                             DEVELOPER ID
                         </label>
                         <div className="relative bg-gradient-to-r from-black/80 to-black/60 p-[2px] rounded-lg hover:from-blue-500/30 hover:to-cyan-500/30 transition-all">
@@ -88,8 +88,8 @@ const RedeemPageComponent = () => {
                 {/* Message Display */}
                 {message && (
                     <div className={`mt-6 sm:mt-8 p-3 sm:p-4 rounded-lg border ${message.includes("successful")
-                            ? "border-green-500/30 bg-green-900/10 text-green-400"
-                            : "border-red-500/30 bg-red-900/10 text-red-400"
+                        ? "border-green-500/30 bg-green-900/10 text-green-400"
+                        : "border-red-500/30 bg-red-900/10 text-red-400"
                         } text-center font-mono animate-fade-in`}
                     >
                         {message}

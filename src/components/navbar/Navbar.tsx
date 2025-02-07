@@ -87,7 +87,7 @@ const Navbar = () => {
                             </svg>
 
                         ) : (
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
                                 <path d="M12 2C7.03 2 4 6 4 6s0 2 4 2v2h8V8c4 0 4-2 4-2s-3.03-4-8-4z"></path>
                                 <path d="M12 20v-2M12 22v-2M10 16h4M9 18h6"></path>
                             </svg>
@@ -114,9 +114,9 @@ const Navbar = () => {
 
                     {/* Profile Button */}
                     <div className="px-2 py-2 flex items-center justify-center rounded-3xl border-[0.5px] cursor-pointer dark:hover:bg-white dark:hover:bg-opacity-5 dark:bg-transparent bg-gray-900 transition-all border-gray-700">
-                        <a href="/api/auth/login">
+                        <Link href="/profile">
                             <Image src="https://i.ibb.co/2d8MDpx/profile-user.png" alt="profile logo" height={30} width={20} />
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
