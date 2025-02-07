@@ -11,7 +11,7 @@ const CodeLevelingLogo = (props: Props) => {
     const { theme, setTheme } = useTheme()
     return (
         <>
-            <div className="codeLevelingLogoDiv md:flex z-[99] p-2 bg-[18191c] bottom-[4rem] relative left-[26rem] ">
+            <div className="codeLevelingLogoDiv md:flex z-[99] p-2 bg-[18191c] top-20 relative ">
                 <Image src={theme === 'dark' ? LOGO_DARK : LOGO_LIGHT} alt="LOGO" width={120} height={120} className='dark:bg-[#18181b] bg-white rounded-xl transition-all ' />
             </div>
         </>
