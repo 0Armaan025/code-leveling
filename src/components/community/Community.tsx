@@ -15,7 +15,7 @@ const Community = (props: Props) => {
                     Community
                 </h3>
                 <h4
-                    className="text-xl text-[#4d4d51] font-medium mt-2"
+                    className="text-xl text-gray-800 dark:text-gray-400 font-medium mt-2"
                     style={{ fontFamily: 'Montserrat, serif' }}
                 >
                     Get involved in our community. Everyone is welcome!

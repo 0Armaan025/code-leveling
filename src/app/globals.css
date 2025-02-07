@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,12 +7,21 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --light-background: linear-gradient(to bottom right, #1f2937, #000000);
+  --light-gradient-from: #1e3a8a; /* Tailwind's sky-300 */
+  --light-gradient-to: #4338ca; /* Tailwind's indigo-400 */
+  --dark-background: #0a0a0a;
+  --dark-gradient-from: #1f2937; /* Dark background gradient from */
+  --dark-gradient-to: #111827; /* Dark background gradient to */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --light-background: var(--dark-background);
+    --light-gradient-from: var(--dark-gradient-from);
+    --light-gradient-to: var(--dark-gradient-to);
   }
 }
 
@@ -21,36 +29,33 @@
     cursor: none;
 } */
 
-
 body {
-
   color: var(--foreground);
-  background: linear-gradient(to bottom right, #1f2937, #000000);
-
-  /* background: var(--background); */
+  background: var(--light-background); /* Default background (light theme) */
+  background: linear-gradient(to bottom right, var(--light-gradient-from), var(--light-gradient-to)); /* Light theme gradient */
   font-family: Arial, Helvetica, sans-serif;
 }
 
 @keyframes border-pulse {
-    0% { opacity: 0.2; }
-    50% { opacity: 0.6; }
-    100% { opacity: 0.2; }
-  }
+  0% { opacity: 0.2; }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.2; }
+}
 
-  @keyframes text-shimmer {
-    0% { background-position: -100% 0; }
-    100% { background-position: 100% 0; }
-  }
+@keyframes text-shimmer {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
 
-  .animate-border-pulse {
-    animation: border-pulse 3s infinite;
-  }
+.animate-border-pulse {
+  animation: border-pulse 3s infinite;
+}
 
-  .animate-text-shimmer {
-    background-size: 200% auto;
-    animation: text-shimmer 3s linear infinite;
-  }
+.animate-text-shimmer {
+  background-size: 200% auto;
+  animation: text-shimmer 3s linear infinite;
+}
 
-  .perspective-1000 {
-    transform: perspective(1000px);
-  }
+.perspective-1000 {
+  transform: perspective(1000px);
+}

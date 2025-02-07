@@ -11,7 +11,7 @@ const DocsPage = (props: Props) => {
 
     // State to manage the currently active feature
     const [activeFeature, setActiveFeature] = useState("Introduction");
-    
+
     // Fix: Initialize ref properly
     const featureRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
@@ -61,13 +61,13 @@ const DocsPage = (props: Props) => {
     };
 
     // Function to handle feature click
-    function handleFeatureClick(feature: string){
-        
+    function handleFeatureClick(feature: string) {
+
         setActiveFeature(feature);
         // Scroll to the selected feature's content
         featureRefs.current[feature]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
-    
+
 
     // Effect to observe the visibility of feature sections
     // useEffect(() => {
@@ -108,7 +108,7 @@ const DocsPage = (props: Props) => {
 
     return (
         <>
-            <div className="docsPage flex flex-col md:flex-row justify-start items-start dark:bg-gradient-to-br dark:from-gray-900 dark:to-black bg-gradient-to-br from-indigo-300 via-blue-100 to-white min-h-screen">
+            <div className="docsPage flex flex-col md:flex-row justify-start items-start dark:bg-black bg-gradient-to-r from-sky-300 to-indigo-400 dark:from-gray-900 dark:to-gray-800 min-h-screen">
                 {/* Sidebar Section */}
                 <div className={`flex flex-col justify-start items-start overflow-x-hidden md:ml-8 mt-0 md:h-[170vh] p-2 md:pr-12 border-r-[0.5px] border-r-gray-700 w-full md:w-60`}>
                     <div className="flex flex-row justify-start items-center mt-8 cursor-pointer w-48" onClick={toggleCollapse}>
@@ -156,20 +156,20 @@ const DocsPage = (props: Props) => {
                             <div
                                 key={index}
                                 id={feature.title}
-                                ref={(el) => {featureRefs.current[feature.title] = el}}
+                                ref={(el) => { featureRefs.current[feature.title] = el }}
                                 className="mb-12"
                             >
-                                    <div>
-                                        <h2 className="text-xl md:text-2xl font-semibold mb-4 dark:text-white text-gray-900">{feature.title}</h2>
-                                        <p className="text-gray-700">
-                                            {feature.content}
-                                        </p>
+                                <div>
+                                    <h2 className="text-xl md:text-2xl font-semibold mb-4 dark:text-white text-gray-900">{feature.title}</h2>
+                                    <p className="text-gray-700">
+                                        {feature.content}
+                                    </p>
 
-                                    </div>
                                 </div>
+                            </div>
                         ))}
 
-                                
+
                     </div>
                 </div>
             </div>

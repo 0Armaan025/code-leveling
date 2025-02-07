@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <footer className=" pt-16 text-center dark:text-[#66666f] dark:bg-gradient-to-b dark:from-black dark:to-slate-950 bg-gradient-to-br from-indigo-200 via-blue-100 to-white py-4 text-gray-900" style={{ fontFamily: 'Montserrat, serif' }}>
+        <footer className=" pt-16 text-center dark:text-[#66666f] dark:from-gray-900 dark:to-gray-800 dark:bg-black bg-gradient-to-r from-sky-300 to-indigo-400 py-4 text-gray-900" style={{ fontFamily: 'Montserrat, serif' }}>
             © 2025 Code-leveling Project. All rights reserved.
         </footer>
     );
