@@ -70,6 +70,27 @@ const LeaderboardPage = (props: Props) => {
                     ))}
                 </div>
 
+                {/* Language Dropdown */}
+                {filter === "language" && (
+                    <div className="mb-8">
+                        <label htmlFor="language" className="block text-sm font-medium text-gray-900 dark:text-gray-400">
+                            Select Language
+                        </label>
+                        <select
+                            id="language"
+                            value={selectedLanguage}
+                            onChange={(e) => setSelectedLanguage(e.target.value)}
+                            className="mt-1 block w-48 px-4 py-2 bg-white dark:bg-gray-700 dark:border dark:border-gray-600 rounded-md text-black dark:text-white focus:ring-1 focus:ring-purple-500 outline-none"
+                        >
+                            {languages.map((lang) => (
+                                <option key={lang} value={lang}>
+                                    {lang}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                )}
+
                 {/* Leaderboard Table */}
                 <div className="overflow-x-auto mb-12 rounded-xl">
                     <table className="min-w-full bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-300 dark:border-gray-700">
