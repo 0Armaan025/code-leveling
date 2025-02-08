@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import {
     ResponsiveContainer,
@@ -31,25 +32,7 @@ const DashboardPageComponent = () => {
     const [isClient, setIsClient] = useState(false);
     const [apiKey, setApiKey] = useState(generateRandomApiKey());
     const [showApiKey, setShowApiKey] = useState(false);
-
-    useEffect(() => {
-        setIsClient(true);
-    }, []);
-
-    const toggleApiKeyVisibility = () => {
-        setShowApiKey(!showApiKey);
-    };
-
-    const updateApiKey = () => {
-        setApiKey(generateRandomApiKey());
-    };
-
-    if (!isClient) return null;
-
-    const timeRangeOptions = ["Last 7 Days", "Monthly", "Yearly"];
-    const projectOptions = ["All Projects", "Project A", "Project B", "Project C"];
-
-    const allData = {
+    const [allData, setAllData] = useState<any>({
         Last_7_Days: [
             { name: "Mon", hours: 4 },
             { name: "Tue", hours: 6 },
@@ -79,21 +62,39 @@ const DashboardPageComponent = () => {
             { name: "Nov", hours: 190 },
             { name: "Dec", hours: 200 },
         ],
+    });
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    const toggleApiKeyVisibility = () => {
+        setShowApiKey(!showApiKey);
     };
 
-    const projectData = [
+    const updateApiKey = () => {
+        setApiKey(generateRandomApiKey());
+    };
+
+    if (!isClient) return null;
+
+    const timeRangeOptions = ["Last 7 Days", "Monthly", "Yearly"];
+    const projectOptions = ["All Projects", "Project A", "Project B", "Project C"];
+
+
+    const [projectData, setProjectData] = useState([
         { name: "Project A", hours: 300 },
         { name: "Project B", hours: 450 },
         { name: "Project C", hours: 200 },
-    ];
+    ]);
 
-    const languageUsage = [
+    const [languageUsage, setLanguageUsage] = useState([
         { name: "JavaScript", hours: 150 },
         { name: "Python", hours: 120 },
         { name: "Java", hours: 80 },
         { name: "C++", hours: 40 },
         { name: "Ruby", hours: 30 },
-    ];
+    ]);
 
     const getChartData = () => {
         const formattedKey = selectedTimeRange.replace(/\s+/g, "_");
