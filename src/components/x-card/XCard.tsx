@@ -45,7 +45,7 @@ const XCard = (props: Props) => {
 
                     {/* second text section */}
                     <div className="flex flex-col mt-3 justify-start items-start w-72">
-                        <h2 className='ml-1 text-[#71717a] text-sm dark:text-[#d1d5db]' style={{ fontFamily: "Montserrat, serif" }}><span className='font-semibold'>256</span> Following | <span className='font-semibold'>80</span> Followers</h2>
+                        <h2 className='ml-1 text-[#71717a] text-sm dark:text-[#d1d5db]' style={{ fontFamily: "Montserrat, serif" }}><span className='font-semibold'>297</span> Following | <span className='font-semibold'>83</span> Followers</h2>
                     </div>
 
                 </div>
