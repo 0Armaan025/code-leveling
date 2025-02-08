@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation";
 
 const LeftSidebar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const isActive = (path: string) => usePathname() === path;
+    const pathname = usePathname();
+    const isActive = (path: string) => pathname === path;
 
     const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
