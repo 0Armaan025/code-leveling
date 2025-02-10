@@ -6,15 +6,7 @@ import LOGO_DARK from '../../../public/logo_dark.png';
 import { useTheme } from 'next-themes';
 
 const CodeLevelingLogo = () => {
-    const { theme } = useTheme();
-    const [mounted, setMounted] = React.useState(false);
-
-    React.useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    if (!mounted) return null;
-
+    const { theme } = useTheme()
     return (
         <>
             <div className="codeLevelingLogoDiv md:flex z-[99] p-2 bg-[18191c] top-20 relative ">
