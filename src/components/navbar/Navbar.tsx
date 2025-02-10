@@ -59,7 +59,7 @@ const Navbar = () => {
                     {/* Version Badge and Intro Chip */}
                     <div className="hidden md:flex items-start ml-4">
                         <div className="px-3 py-1 rounded-3xl  border-[0.7px] border-gray-700 cursor-pointer transition-all dark:bg-[#1d1d1f] bg-white dark:text-[#7f7f86] text-gray-500">
-                            <h3 className="text-xs font-semibold">Version 1.0</h3>
+                            <h3 className="text-xs font-semibold">Version 1.0.0</h3>
                         </div>
                         <div className="px-3 py-1 ml-4 rounded-3xl cursor-pointer border-[0.7px] border-gray-700  dark:hover:bg-[#1f1f22] hover:text-gray-500 transition-all dark:border-[0.7px] border-gray-700 dark:bg-[#1c1c1f] dark:text-[#ecedee] bg-white text-gray-900">
                             <h3 className="text-xs font-semibold">Introducing Code-Leveling 🔥</h3>
