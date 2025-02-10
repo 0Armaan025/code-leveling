@@ -6,7 +6,7 @@ import LabPageComponent from '@/components/pages-components/lab-page/LabPageComp
 
 const LabPage = () => {
     return (
-        <div className="dashboardPage min-h-screen bg-gradient-to-br from-gray-900 to-black flex">
+        <div className="dashboardPage min-h-screen bg-white flex">
             {/* Left Sidebar */}
             <LeftSidebar />
 

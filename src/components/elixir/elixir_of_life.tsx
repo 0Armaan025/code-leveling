@@ -9,7 +9,7 @@ const ElixirOfLife = () => {
 
 
                 {/* Outer Glowing Effect */}
-                <div className="absolute inset-0 rounded-lg bg-blue-500 blur-xl opacity-30 dark:bg-blue-700 dark:opacity-50"></div>
+                <div className="absolute inset-0 rounded-lg bg-slate-400 blur-xl opacity-30 dark:bg-blue-700 dark:opacity-50"></div>
 
                 {/* Content */}
                 <div className="relative">

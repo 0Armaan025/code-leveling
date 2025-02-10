@@ -11,7 +11,7 @@ type Props = {
 
 const CommunityCard = (props: Props) => {
     return (
-        <div className="communityCard cursor-pointer mr-6 mt-2 sm:mt-16 flex flex-col justify-start items-start p-4 rounded-xl dark:border-gray-700 border-gray-200 dark:bg-gradient-to-r dark:from-[#18181c] dark:via-[#090212] dark:to-[#080112] bg-gradient-to-br from-indigo-200 via-blue-100 to-white
+        <div className="communityCard cursor-pointer mr-6 mt-2 sm:mt-16 flex flex-col justify-start items-start p-4 rounded-xl dark:border-gray-700 border-gray-200 dark:bg-gradient-to-r dark:from-[#18181c] dark:via-[#090212] dark:to-[#080112] bg-gray-400
  border-[0.5px] sm:w-[300px] w-full transition-transform hover:scale-105 shadow-md dark:shadow-none">
             {/* Upper Section */}
             <div className="flex flex-row justify-start items-center">
@@ -42,7 +42,7 @@ const CommunityCard = (props: Props) => {
             {/* Text Section */}
             <div className="mt-4 w-full">
                 <h3
-                    className="text-[#7f7f87] font-medium text-md sm:w-auto w-full"
+                    className="dark:text-[#7f7f87] text-white font-medium text-md sm:w-auto w-full"
                     style={{ fontFamily: 'Montserrat, serif' }}
                 >
                     {props.description}

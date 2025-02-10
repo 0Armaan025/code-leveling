@@ -108,7 +108,7 @@ const DocsPage = (props: Props) => {
 
     return (
         <>
-            <div className="docsPage flex flex-col md:flex-row justify-start items-start dark:bg-black bg-gradient-to-r from-sky-300 to-indigo-400 dark:from-gray-900 dark:to-gray-800 min-h-screen">
+            <div className="docsPage flex flex-col md:flex-row justify-start items-start dark:bg-black bg-gradient-to-r bg-white dark:from-gray-900 dark:to-gray-800 min-h-screen">
                 {/* Sidebar Section */}
                 <div className={`flex flex-col justify-start items-start overflow-x-hidden md:ml-8 mt-0 md:h-[170vh] p-2 md:pr-12 border-r-[0.5px] border-r-gray-700 w-full md:w-60`}>
                     <div className="flex flex-row justify-start items-center mt-8 cursor-pointer w-48" onClick={toggleCollapse}>

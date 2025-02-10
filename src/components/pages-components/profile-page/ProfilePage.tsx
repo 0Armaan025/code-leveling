@@ -81,7 +81,7 @@ const ProfilePage = () => {
     ];
 
     return (
-        <div className="profilePage min-h-screen p-6 dark:bg-black bg-gradient-to-r from-sky-300 to-indigo-400 dark:from-gray-900 dark:to-gray-800  flex items-center justify-center relative overflow-hidden">
+        <div className="profilePage min-h-screen p-6 dark:bg-black bg-white dark:from-gray-900 dark:to-gray-800  flex items-center justify-center relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 animate-pulse"></div>
             <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent"></div>
@@ -116,10 +116,10 @@ const ProfilePage = () => {
                                 onChange={(e) =>
                                     handleInputChange("realName", e.target.value)
                                 }
-                                className="mt-4 w-3/4 dark:bg-black/50 bg-white dark:text-cyan-300 text-blue-500 text-center p-2 rounded-md border dark:border-cyan-500/30 border-blue-500 focus:outline-none font-mono"
+                                className="mt-4 w-3/4 dark:bg-black/50 bg-white dark:text-cyan-300 text-black text-center p-2 rounded-md border dark:border-cyan-500/30 border-blue-500 focus:outline-none font-mono"
                             />
                         ) : (
-                            <h1 className="text-2xl font-bold text-transparent bg-clip-text dark:bg-gradient-to-r dark:from-cyan-300 dark:to-blue-400 bg-gradient-to-r from-blue-400 to-cyan-400 mt-4">
+                            <h1 className="text-2xl font-bold text-transparent bg-clip-text dark:bg-gradient-to-r dark:from-cyan-300 dark:to-blue-400 bg-black mt-4">
                                 {userData.realName}
                             </h1>
                         )}
@@ -130,10 +130,10 @@ const ProfilePage = () => {
                                 onChange={(e) =>
                                     handleInputChange("developerName", e.target.value.replace(/^@/, ""))
                                 }
-                                className="mt-4 w-3/4 dark:bg-black/50 bg-white dark:text-cyan-300 text-blue-500 text-center p-2 rounded-md border dark:border-cyan-500/30 border-blue-500 focus:outline-none font-mono"
+                                className="mt-4 w-3/4 dark:bg-black/50 bg-white dark:text-cyan-300 text-black text-center p-2 rounded-md border dark:border-cyan-500/30 border-blue-500 focus:outline-none font-mono"
                             />
                         ) : (
-                            <p className="dark:text-cyan-400 text-blue-500 text-sm font-mono mt-2">
+                            <p className="dark:text-cyan-400 text-black text-sm font-mono mt-2">
                                 @{userData.developerName}
                             </p>
                         )}
@@ -152,8 +152,8 @@ const ProfilePage = () => {
                                 ["XP", "xp"]
                             ].map(([label, key]) => (
                                 <div key={key}>
-                                    <label className="text-sm dark:text-cyan-400/80 text-blue-700 font-mono">{label}</label>
-                                    <p className="dark:text-cyan-300 text-blue-500 font-mono">{userData[key]}</p>
+                                    <label className="text-sm dark:text-cyan-400/80 text-black font-mono">{label}</label>
+                                    <p className="dark:text-cyan-300 text-black font-mono">{userData[key]}</p>
                                 </div>
                             ))}
 
@@ -163,28 +163,28 @@ const ProfilePage = () => {
                                 ["Favorite Language", "favoriteLanguage"],
                             ].map(([label, key]) => (
                                 <div key={key}>
-                                    <label className="text-sm dark:text-cyan-400/80 text-blue-700 font-mono">{label}</label>
+                                    <label className="text-sm dark:text-cyan-400/80 text-black font-mono">{label}</label>
                                     {isEditing ? (
                                         <input
                                             type="text"
                                             value={userData[key]}
                                             onChange={(e) => handleInputChange(key, e.target.value)}
-                                            className="w-full dark:bg-black/50 bg-white dark:text-cyan-300 text-blue-500 p-2 rounded-md border dark:border-cyan-500/30 border-blue-500 focus:outline-none font-mono"
+                                            className="w-full dark:bg-black/50 bg-white dark:text-cyan-300 text-black p-2 rounded-md border dark:border-cyan-500/30 border-blue-500 focus:outline-none font-mono"
                                         />
                                     ) : (
-                                        <p className="dark:text-cyan-300 text-blue-500 font-mono">{userData[key]}</p>
+                                        <p className="dark:text-cyan-300 text-black font-mono">{userData[key]}</p>
                                     )}
                                 </div>
                             ))}
 
                             {/* Best Project Dropdown */}
                             <div>
-                                <label className="text-sm dark:text-cyan-400/80 text-blue-700 font-mono">Best Project</label>
+                                <label className="text-sm dark:text-cyan-400/80 text-black font-mono">Best Project</label>
                                 {isEditing ? (
                                     <select
                                         value={userData.bestProject}
                                         onChange={(e) => handleInputChange("bestProject", e.target.value)}
-                                        className="w-full dark:bg-black/50 bg-white dark:text-cyan-300 text-blue-500 p-2 rounded-md border dark:border-cyan-500/30 border-blue-500 focus:outline-none font-mono"
+                                        className="w-full dark:bg-black/50 bg-white dark:text-cyan-300 text-black p-2 rounded-md border dark:border-cyan-500/30 border-blue-500 focus:outline-none font-mono"
                                     >
                                         {bestProjectOptions.map((option) => (
                                             <option key={option} value={option} className="dark:bg-black">
@@ -193,14 +193,14 @@ const ProfilePage = () => {
                                         ))}
                                     </select>
                                 ) : (
-                                    <p className="dark:text-cyan-300 text-blue-500 font-mono">{userData.bestProject}</p>
+                                    <p className="dark:text-cyan-300 text-black font-mono">{userData.bestProject}</p>
                                 )}
                             </div>
                         </div>
 
                         {/* Public/Private Toggle */}
                         <div className="flex items-center justify-between">
-                            <span className="text-sm dark:text-cyan-400/80 text-blue-700 font-mono">
+                            <span className="text-sm dark:text-cyan-400/80 text-black font-mono">
                                 {isPrivate ? "Private" : "Public"}
                             </span>
                             <button
@@ -227,7 +227,7 @@ const ProfilePage = () => {
 
                 {/* System Footer */}
                 <div className="mt-6 pt-4 border-t border-cyan-500/20">
-                    <div className="flex justify-between items-center text-sm dark:text-cyan-500/50 text-blue-700 font-mono">
+                    <div className="flex justify-between items-center text-sm dark:text-cyan-500/50 text-black font-mono">
                         <div className="flex items-center gap-2">
                             <span className="animate-pulse">◈</span>
                             PROFILE STATUS: <span className="text-green-500/80"> {isPrivate ? "PRIVATE" : "PUBLIC"} </span>

@@ -15,7 +15,7 @@ const XCard = (props: Props) => {
     return (
         <>
             <div className="wrapperDivForXCard">
-                <div className="xCard flex flex-col bg-gradient-to-br from-indigo-200 via-blue-100 to-white dark:bg-gradient-to-r dark:from-[#18181c] dark:via-[#090212] dark:to-[#080112] z-[0] justify-start items-start p-2 rounded-xl relative md:right-12 w-[23rem] hover:cursor-pointer">
+                <div className="xCard flex flex-col bg-slate-200 dark:bg-gradient-to-r dark:from-[#18181c] dark:via-[#090212] dark:to-[#080112] z-[0] justify-start items-start p-2 rounded-xl relative md:right-12 w-[23rem] hover:cursor-pointer">
                     {/* top section  */}
                     <div className="flex flex-row justify-between items-center">
                         <div className="rounded-full border-[0.3px] border-gray-600 h-14 w-14">
@@ -45,7 +45,7 @@ const XCard = (props: Props) => {
 
                     {/* second text section */}
                     <div className="flex flex-col mt-3 justify-start items-start w-72">
-                        <h2 className='ml-1 text-[#71717a] text-sm dark:text-[#d1d5db]' style={{ fontFamily: "Montserrat, serif" }}><span className='font-semibold'>297</span> Following | <span className='font-semibold'>83</span> Followers</h2>
+                        <h2 className='ml-1 text-[#71717a] text-sm dark:text-[#d1d5db]' style={{ fontFamily: "Montserrat, serif" }}><span className='font-semibold'>297</span> Following | <span className='font-semibold'>87</span> Followers</h2>
                     </div>
 
                 </div>

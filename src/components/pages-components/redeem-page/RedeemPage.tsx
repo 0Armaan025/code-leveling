@@ -21,46 +21,46 @@ const RedeemPageComponent = () => {
     };
 
     return (
-        <div className="redeemPage min-h-screen p-6 dark:bg-black bg-gradient-to-r from-sky-300 to-indigo-400 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center relative overflow-hidden">
+        <div className="redeemPage min-h-screen p-6 dark:bg-black bg-white dark:from-gray-900 dark:to-gray-800 flex items-center justify-center relative overflow-hidden">
             {/* Animated Background Elements */}
             <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10 animate-pulse"></div>
-            <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent"></div>
+            
 
             {/* Main Card */}
-            <div className="relative w-[700px] dark:bg-black rounded-2xl border-2 border-blue-500/30 shadow-2xl p-8 backdrop-blur-xl transform perspective-1000">
+            <div className="relative w-[700px] dark:bg-black rounded-2xl border-2 border-gray-800 shadow-2xl p-8 backdrop-blur-xl transform perspective-1000">
                 {/* Holographic Border Effect */}
                 <div className="absolute inset-0 rounded-2xl border-2 border-blue-500/20 animate-border-pulse"></div>
 
                 {/* Glowing Center Line */}
-                <div className="absolute inset-x-0 top-1/2 h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-30"></div>
+                <div className="absolute inset-x-0 top-[120px] h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-30"></div>
 
                 {/* Header */}
                 <div className="text-center mb-6 sm:mb-8 space-y-2">
-                    <h1 className="text-3xl sm:text-4xl font-bold  text-white dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-blue-400 dark:to-cyan-500 dark:animate-text-shimmer">
+                    <h1 className="text-3xl sm:text-4xl font-bold  text-black dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-blue-400 dark:to-cyan-500 dark:animate-text-shimmer">
                         SYSTEM REDEEM
                     </h1>
-                    <p className="text-sm dark:text-cyan-400/80 text-white font-mono">Authorization Level: [★★★☆☆]</p>
+                    <p className="text-sm dark:text-cyan-400/80 text-gray-700 font-mono">Authorization Level: [★★★☆☆]</p>
                 </div>
 
                 {/* Input Fields */}
                 <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
                     <div className="group">
-                        <label className="block dark:text-cyan-400/80 text-white text-sm font-mono mb-2 ml-1">
+                        <label className="block dark:text-cyan-400/80 text-black text-sm font-mono mb-2 ml-1">
                             REDEEM CODE
                         </label>
-                        <div className="relative bg-gradient-to-r from-black/80 to-black/60 p-[2px] rounded-lg hover:from-blue-500/30 hover:to-cyan-500/30 transition-all">
+                        <div className="relative bg-gradient-to-r from-black/80 to-black/60 p-[2px] rounded-lg hover:from-blue-gray-800 hover:to-gray-800/30 transition-all">
                             <input
                                 type="text"
                                 placeholder="Enter Authorization Code"
                                 value={redeemCode}
                                 onChange={(e) => setRedeemCode(e.target.value)}
-                                className="w-full px-5 py-3 dark:bg-black/80 rounded-[calc(0.5rem-2px)] dark:text-cyan-300 text-blue-400 dark:border border-blue-500/30 focus:border-cyan-400 outline-none focus:ring-2 focus:ring-cyan-500/20 font-mono transition-all placeholder:text-blue-300"
+                                className="w-full px-5 py-3 dark:bg-black/80 rounded-[calc(0.5rem-2px)] dark:text-cyan-300 text-gray-800 dark:border border-gray-800 focus:border-gray-600 outline-none focus:ring-2 focus:ring-cyan-500/20 font-mono transition-all placeholder:text-gray-600"
                             />
                         </div>
                     </div>
 
                     <div className="group">
-                        <label className="block dark:text-cyan-400/80 text-white text-sm font-mono mb-2 ml-1">
+                        <label className="block dark:text-cyan-400/80 text-black text-sm font-mono mb-2 ml-1">
                             DEVELOPER ID
                         </label>
                         <div className="relative bg-gradient-to-r from-black/80 to-black/60 p-[2px] rounded-lg hover:from-blue-500/30 hover:to-cyan-500/30 transition-all">
@@ -69,7 +69,7 @@ const RedeemPageComponent = () => {
                                 placeholder="ARMAAN"
                                 value={developerName}
                                 onChange={(e) => setDeveloperName(e.target.value)}
-                                className="w-full px-5 py-3 dark:bg-black/80 rounded-[calc(0.5rem-2px)] dark:text-cyan-300 placeholder:text-blue-300 text-blue-400 dark:border border-cyan-400 focus:border-cyan-400 outline-none focus:ring-2 focus:ring-cyan-500/20 font-mono transition-all"
+                                className="w-full px-5 py-3 dark:bg-black/80 rounded-[calc(0.5rem-2px)] dark:text-cyan-300 text-gray-800 dark:border border-gray-800 focus:border-gray-600 outline-none focus:ring-2 focus:ring-cyan-500/20 font-mono transition-all placeholder:text-gray-600"
                             />
                         </div>
                     </div>
@@ -79,7 +79,7 @@ const RedeemPageComponent = () => {
                 <div className="flex justify-center">
                     <button
                         onClick={handleRedeem}
-                        className="px-6 py-2 sm:px-8 sm:py-3 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg font-bold text-white/90 hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_2px_rgba(34,211,238,0.3)]"
+                        className="px-6 py-2 sm:px-8 sm:py-3 dark:bg-gradient-to-r dark:from-blue-600 dark:to-cyan-600 bg-black text-white rounded-lg font-bold text-white/90 hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_2px_rgba(34,211,238,0.3)]"
                     >
                         INITIATE REDEEM
                     </button>

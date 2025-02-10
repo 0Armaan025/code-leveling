@@ -30,14 +30,16 @@ const LeftSidebar = () => {
 
             {/* Sidebar Container */}
             <div
-                className={`flex flex-col w-64 min-h-screen dark:bg-black bg-gradient-to-r from-sky-300 to-indigo-400 dark:from-gray-900 dark:to-gray-800 text-gray-900 p-4 md:p-6 border-r border-gray-800 fixed lg:relative left-0 top-0 transform transition-transform duration-300 ease-in-out z-50 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+                className={`flex flex-col w-64 min-h-screen dark:bg-black bg-white dark:from-gray-900 dark:to-gray-800 text-gray-900 p-4 md:p-6 border-r border-gray-800 fixed lg:relative left-0 top-0 transform transition-transform duration-300 ease-in-out z-50 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
                     }`}
             >
                 {/* Logo or Branding */}
                 <div className="mb-6 md:mb-10">
+                    <Link href="/">
                     <h1 className="text-2xl font-bold dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-purple-400 dark:to-pink-600 text-black">
                         Code-leveling
                     </h1>
+                    </Link>
                 </div>
 
                 {/* Navigation Links (existing content remains the same) */}

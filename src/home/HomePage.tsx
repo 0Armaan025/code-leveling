@@ -9,7 +9,7 @@ type Props = {}
 const HomePage = (props: Props) => {
     return (
         <>
-            <div className="homePage dark:bg-gradient-to-br dark:from-gray-900 dark:to-black bg-gradient-to-br from-indigo-300 via-blue-100 to-white">
+            <div className="homePage dark:bg-black bg-white  dark:from-gray-900 dark:to-gray-800">
                 <HeroSection />
             </div>
         </>

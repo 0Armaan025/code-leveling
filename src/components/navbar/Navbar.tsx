@@ -34,7 +34,7 @@ const Navbar = () => {
     return (
         <>
             {/* Navbar */}
-            <nav className="navbar flex dark:from-gray-900 dark:to-gray-800 justify-between sticky top-0 z-[10000] bg-opacity-40  items-center px-4 py-2 dark:border-b border-gray-800 blur-[0.3px] dark:bg-black bg-gradient-to-r from-sky-300 to-indigo-400">
+            <nav className="navbar flex dark:from-gray-900 dark:to-gray-800 justify-between sticky top-0 z-[10000] bg-opacity-90  items-center px-4 py-2 dark:border-b border-gray-800 blur-[0.3px] dark:bg-black bg-white">
                 {/* Logo and Title Section */}
                 <div className="flex items-center">
                     <div className="flex items-center dark:bg-white bg-gray-900 h-8 w-8 rounded-md">
@@ -52,16 +52,16 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <Link href="/">
-                        <h3 className="headingText dark:text-white text-white ml-4 font-semibold text-lg">
+                        <h3 className="headingText dark:text-white text-black ml-4 font-semibold text-lg">
                             Code-Leveling
                         </h3>
                     </Link>
                     {/* Version Badge and Intro Chip */}
                     <div className="hidden md:flex items-start ml-4">
-                        <div className="px-3 py-1 rounded-3xl cursor-pointer transition-all dark:bg-[#1d1d1f] bg-white dark:text-[#7f7f86] text-gray-500">
+                        <div className="px-3 py-1 rounded-3xl  border-[0.7px] border-gray-700 cursor-pointer transition-all dark:bg-[#1d1d1f] bg-white dark:text-[#7f7f86] text-gray-500">
                             <h3 className="text-xs font-semibold">Version 1.0</h3>
                         </div>
-                        <div className="px-3 py-1 ml-4 rounded-3xl cursor-pointer dark:hover:bg-[#1f1f22] hover:text-gray-500 transition-all dark:border-[0.7px] border-gray-700 dark:bg-[#1c1c1f] dark:text-[#ecedee] bg-white text-gray-900">
+                        <div className="px-3 py-1 ml-4 rounded-3xl cursor-pointer border-[0.7px] border-gray-700  dark:hover:bg-[#1f1f22] hover:text-gray-500 transition-all dark:border-[0.7px] border-gray-700 dark:bg-[#1c1c1f] dark:text-[#ecedee] bg-white text-gray-900">
                             <h3 className="text-xs font-semibold">Introducing Code-Leveling 🔥</h3>
                         </div>
                     </div>
@@ -73,34 +73,34 @@ const Navbar = () => {
                         className="bg-transparent text-white"
                         onClick={toggleTheme}
                     >
-                        {theme === 'dark' ? (
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-sun w-6 h-6">
-                                <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2" fill="none" />
-                                <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" strokeWidth="2" />
-                                <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" strokeWidth="2" />
-                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" strokeWidth="2" />
-                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" strokeWidth="2" />
-                                <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" strokeWidth="2" />
-                                <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" strokeWidth="2" />
-                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" strokeWidth="2" />
-                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" strokeWidth="2" />
-                            </svg>
-
-                        ) : (
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-                                <path d="M12 2C7.03 2 4 6 4 6s0 2 4 2v2h8V8c4 0 4-2 4-2s-3.03-4-8-4z"></path>
-                                <path d="M12 20v-2M12 22v-2M10 16h4M9 18h6"></path>
-                            </svg>
-
+                        {mounted && (
+                            theme === 'dark' ? (
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-sun w-6 h-6">
+                                    <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2" fill="none" />
+                                    <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" strokeWidth="2" />
+                                    <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" strokeWidth="2" />
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" strokeWidth="2" />
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" strokeWidth="2" />
+                                    <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" strokeWidth="2" />
+                                    <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" strokeWidth="2" />
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" strokeWidth="2" />
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" strokeWidth="2" />
+                                </svg>
+                            ) : (
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                                    <path d="M12 2C7.03 2 4 6 4 6s0 2 4 2v2h8V8c4 0 4-2 4-2s-3.03-4-8-4z"></path>
+                                    <path d="M12 20v-2M12 22v-2M10 16h4M9 18h6"></path>
+                                </svg>
+                            )
                         )}
                     </button>
                 </div>
 
                 {/* Links and Buttons */}
                 <div className="hidden md:flex items-center space-x-6">
-                    <Link href="/docs"><h3 className={`transition-all cursor-pointer text-white ${getLinkStyle('/docs')}`}>Docs</h3></Link>
-                    <Link href="/about"><h3 className={`transition-all cursor-pointer text-white ${getLinkStyle('/about')}`}>About</h3></Link>
-                    <Link href="/leaderboard"><h3 className={`transition-all cursor-pointer  text-white ${getLinkStyle('/leaderboard')}`}>Leaderboard</h3></Link>
+                    <Link href="/docs"><h3 className={`transition-all cursor-pointer text-black ${getLinkStyle('/docs')}`}>Docs</h3></Link>
+                    <Link href="/about"><h3 className={`transition-all cursor-pointer text-black ${getLinkStyle('/about')}`}>About</h3></Link>
+                    <Link href="/leaderboard"><h3 className={`transition-all cursor-pointer  text-black ${getLinkStyle('/leaderboard')}`}>Leaderboard</h3></Link>
 
                     {/* Social Buttons */}
                     <div className="px-3 py-1 flex items-center rounded-3xl border-[0.5px] cursor-pointer dark:bg-transparent bg-gray-900 dark:hover:bg-white dark:hover:bg-opacity-5 transition-all border-gray-700">

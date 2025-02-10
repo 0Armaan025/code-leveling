@@ -40,7 +40,7 @@ const HeroSection = () => {
 
     return (
         <React.Fragment>
-            <div className={`min-h-screen bg-gradient-to-br transition-all duration-500 ${mounted ? 'dark:from-gray-900 dark:to-gray-800 from-sky-300 to-indigo-400' : 'from-blue-200 to-purple-400'}`}>
+            <div className={`min-h-screen bg-gradient-to-br transition-all duration-500 ${mounted ? 'dark:from-gray-900 dark:to-gray-800 ' : ' bg-white'}`}>
                 {/* Updated Background Gradient */}
                 <div className="container mx-auto px-4 py-12 relative">
                     <div className="flex flex-col md:flex-row items-start gap-12 space-x-20">
@@ -65,9 +65,9 @@ const HeroSection = () => {
                                 </button>
 
                                 <Link href="/docs">
-                                    <button className={`ml-0 sm:ml-4 px-6 py-3 w-full sm:w-auto rounded-xl font-medium text-lg shadow-md hover:shadow-lg transition-all duration-300 ${mounted ?
-                                        'bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white' :
-                                        'bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 border border-gray-200 text-black dark:text-white'}`}>
+                                    <button className={`ml-0 sm:ml-4 px-6 py-3 w-full sm:w-auto rounded-xl font-medium text-lg shadow-md hover:shadow-lg transition-all duration-300  bg-gray-800 ${mounted ?
+                                        'bg-gray-800 hover:bg-gray-600 backdrop-blur-sm border border-white/20 text-white' :
+                                        'bg-gray-800 hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 border border-gray-200 text-black dark:text-white'}`}>
                                         See documentation...
                                     </button>
                                 </Link>
