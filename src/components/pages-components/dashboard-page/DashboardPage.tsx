@@ -115,7 +115,7 @@ const DashboardPageComponent = () => {
                         <select
                             value={selectedTimeRange}
                             onChange={(e) => setSelectedTimeRange(e.target.value)}
-                            className="bg-white dark:bg-black text-black dark:text-cyan-300 px-3 py-1.5 rounded-lg border border-black"
+                            className="bg-white dark:bg-black text-black dark:text-cyan-300 px-3 py-1.5 rounded-lg border border-black dark:border dark:border-gray-700"
                         >
                             {timeRangeOptions.map((option) => (
                                 <option key={option} value={option}>
@@ -126,7 +126,7 @@ const DashboardPageComponent = () => {
                         <select
                             value={selectedProject}
                             onChange={(e) => setSelectedProject(e.target.value)}
-                            className="bg-white dark:bg-black text-black dark:text-cyan-300 px-3 py-1.5 rounded-lg border border-black"
+                            className="bg-white dark:bg-black text-black dark:text-cyan-300 px-3 py-1.5 rounded-lg border border-black dark:border dark:border-gray-700"
                         >
                             {projectOptions.map((option) => (
                                 <option key={option} value={option}>
@@ -139,7 +139,7 @@ const DashboardPageComponent = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {/* CODING HOURS (Bar Chart) */}
-                    <div className="bg-white dark:bg-black p-4 rounded-lg border border-black">
+                    <div className="bg-white dark:bg-black p-4 rounded-lg border border-black dark:border-gray-700 dark:border-[0.7px] ">
                         <h2 className="text-lg font-bold text-black dark:text-blue-400">
                             CODING HOURS ({selectedTimeRange.toUpperCase()})
                         </h2>
@@ -161,7 +161,7 @@ const DashboardPageComponent = () => {
                     </div>
 
                     {/* PROJECT DISTRIBUTION (Pie Chart) */}
-                    <div className="bg-white dark:bg-black p-4 rounded-lg border border-black">
+                    <div className="bg-white dark:bg-black p-4 rounded-lg border border-black dark:border-gray-700 dark:border-[0.7px] ">
                         <h2 className="text-lg font-bold text-black dark:text-blue-400">
                             PROJECT DISTRIBUTION
                         </h2>
@@ -195,7 +195,7 @@ const DashboardPageComponent = () => {
                     </div>
 
                     {/* CODING TRENDS (Line Chart) */}
-                    <div className="bg-white dark:bg-black p-4 rounded-lg border border-black md:col-span-2 lg:col-span-3">
+                    <div className="bg-white dark:bg-black p-4 rounded-lg border dark:border-gray-700 dark:border-[0.7px]  border-black md:col-span-2 lg:col-span-3">
                         <h2 className="text-lg font-bold text-black dark:text-blue-400">
                             CODING TRENDS ({selectedTimeRange.toUpperCase()})
                         </h2>
@@ -222,7 +222,7 @@ const DashboardPageComponent = () => {
                     </div>
 
                     {/* LANGUAGE USAGE (Bar Chart) */}
-                    <div className="bg-white dark:bg-black p-4 rounded-lg border border-black">
+                    <div className="bg-white dark:bg-black p-4 rounded-lg border border-black dark:border-gray-700 dark:border-[0.7px] ">
                         <h2 className="text-lg font-bold text-black dark:text-blue-400">
                             LANGUAGE USAGE
                         </h2>
@@ -244,7 +244,7 @@ const DashboardPageComponent = () => {
                     </div>
 
                     {/* LANGUAGE USAGE PERCENTAGE (Pie Chart) */}
-                    <div className="bg-white dark:bg-black p-4 rounded-lg border border-black">
+                    <div className="bg-white dark:bg-black p-4 rounded-lg border border-black dark:border-gray-700 dark:border-[0.7px] ">
                         <h2 className="text-lg font-bold text-black dark:text-blue-400">
                             LANGUAGE USAGE PERCENTAGE
                         </h2>
@@ -285,7 +285,7 @@ const DashboardPageComponent = () => {
                 </div>
 
                 {/* MOST WORKED-ON PROJECT */}
-                <div className="mt-6 bg-white dark:bg-black p-4 rounded-lg border border-black">
+                <div className="mt-6 bg-white dark:bg-black p-4 rounded-lg border border-black dark:border-gray-700 dark:border-[0.7px] ">
                     <h2 className="text-lg font-bold text-black dark:text-blue-400">
                         MOST WORKED-ON PROJECT
                     </h2>

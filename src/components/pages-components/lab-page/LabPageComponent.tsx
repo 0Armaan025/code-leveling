@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaHeart, FaBolt, FaTrophy, FaStar } from 'react-icons/fa';
+import { FaHeart, FaBolt, FaTrophy, FaStar, FaGift } from 'react-icons/fa';
 
 const LabPageComponent = () => {
     const [activeTab, setActiveTab] = useState('stats');
@@ -49,10 +49,10 @@ const LabPageComponent = () => {
             
 
             {/* Tablet Structure */}
-            <div className="relative w-full sm:w-[900px] h-auto sm:h-[500px] dark:bg-black/90 bg-white/90 border-2 border-black dark:border-gray-700 rounded-[30px] shadow-2xl p-4 backdrop-blur-xl flex flex-col sm:flex-row overflow-hidden">
+            <div className="relative w-full sm:w-[978px] h-auto sm:h-[580px] dark:bg-black/90 bg-white/90 border-2 border-black dark:border-gray-700 rounded-[30px] shadow-2xl p-4 backdrop-blur-xl flex flex-col sm:flex-row overflow-hidden">
                 {/* Left Sidebar */}
                 <div className="w-full sm:w-[220px] dark:bg-gradient-to-b dark:from-gray-800/80 dark:to-black/90 bg-gradient-to-b from-gray-200 to-white border-b-2 sm:border-r-4 border-blue-700/40 dark:border-gray-800 dark:border-b-2 p-6 flex flex-col space-y-6 text-white font-mono text-lg">
-                    {['stats', 'tasks', 'achievements', 'upgrades'].map(tab => (
+                    {['stats', 'tasks', 'achievements', 'notifications', 'upgrades'].map(tab => (
                         <div key={tab} onClick={() => setActiveTab(tab)}
                             className={`p-3 sm:p-5 bg-slate-800 rounded-lg text-center cursor-pointer hover:scale-105 transition font-extrabold shadow-lg hover:shadow-cyan-500/50 ${activeTab === tab ? 'border-2 border-cyan-400' : ''}`}>
                             {tab.toUpperCase()}
@@ -149,6 +149,48 @@ const LabPageComponent = () => {
                             <p className="mt-4 text-green-400 font-bold">
                                 🎉 Prize: Become the architect of the system for a day or two! 🎉
                             </p>
+                        </div>
+                    )}
+
+                    {/* Notifications Tab */}
+                    {activeTab === 'notifications' && (
+                        <div>
+                            <h1 className="text-xl font-bold text-center mb-4">NOTIFICATIONS</h1>
+                            <div className="space-y-4">
+                                <div className="p-4 border rounded-lg dark:bg-gray-800 bg-gray-200 dark:hover:bg-gray-700 hover:bg-gray-300 transition flex items-center space-x-3">
+                                    <FaStar className="text-yellow-400 text-2xl" />
+                                    <div>
+                                        <h2 className="font-bold text-yellow-400">New Challenge Available!</h2>
+                                        <p>Check out the latest coding challenge and test your skills.</p>
+                                        <span className="text-sm text-gray-500">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <div className="p-4 border rounded-lg dark:bg-gray-800 bg-gray-200 dark:hover:bg-gray-700 hover:bg-gray-300 transition flex items-center space-x-3">
+                                    <FaTrophy className="text-green-400 text-2xl" />
+                                    <div>
+                                        <h2 className="font-bold text-green-400">Achievement Unlocked!</h2>
+                                        <p>Congratulations! You've completed the "Max Streak" achievement.</p>
+                                        <span className="text-sm text-gray-500">1 day ago</span>
+                                    </div>
+                                </div>
+                                <div className="p-4 border rounded-lg dark:bg-gray-800 bg-gray-200 dark:hover:bg-gray-700 hover:bg-gray-300 transition flex items-center space-x-3">
+                                    <FaHeart className="text-red-400 text-2xl" />
+                                    <div>
+                                        <h2 className="font-bold text-red-400">Health Low!</h2>
+                                        <p>Your health is below 20%. Take a break and recharge.</p>
+                                        <span className="text-sm text-gray-500">3 days ago</span>
+                                    </div>
+                                </div>
+                                <div className="p-4 border rounded-lg dark:bg-gray-800 bg-gray-200 dark:hover:bg-gray-700 hover:bg-gray-300 transition flex items-center space-x-3">
+                                    <FaGift className="text-purple-400 text-2xl" />
+                                    <div>
+                                        <h2 className="font-bold text-purple-400">Dungeon Cleared!</h2>
+                                        <p>Congratulations! You just cleared the dungeon.</p>
+                                        <p>Reward: <span className="font-bold text-green-400">50 XP</span> and <span className="font-bold text-red-400">1 Health Potion</span></p>
+                                        <span className="text-sm text-gray-500">5 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     )}
                 </div>
