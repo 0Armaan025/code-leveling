@@ -147,7 +147,8 @@ const LeaderboardPage = () => {
 
             {/* Shoutouts Section */}
             <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Shoutouts 🎉</h2>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-1">Shoutouts 🎉</h2>
+                <h4 className="text-md text-gray-600 mb-4 underline cursor-pointer" style={{fontFamily: "Montserrat"}}>Request a shoutout...</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {shoutouts.map((shoutout, index) => (
                         <div key={index} className="p-4 bg-slate-200 dark:bg-gray-800 rounded-lg shadow-md flex items-center gap-4 hover:scale-105 transition-all">

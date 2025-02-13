@@ -1,6 +1,7 @@
 "use client";
 import './docs-page.css';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useState, useEffect, useRef } from 'react';
 
 type Props = {};
@@ -35,7 +36,7 @@ const DocsPage = (props: Props) => {
                     To level up, make sure you regularly check your notifications! You'll need to gather experience points by completing tasks and challenges. Once you've earned enough experience, you can surpass level limits and level up. Keep completing tasks and stay on top of your notifications to track your progress.
                     <br />
                     <br />
-                    Learn more about leveling up and tasks on our <a href="/tasks" className="text-blue-600">Tasks</a> page.
+                    Learn more about leveling up and  <Link href="/lab" className="text-blue-600">Lab (find Tasks here)</Link> page.
                 </>
             )
         },
@@ -46,7 +47,7 @@ const DocsPage = (props: Props) => {
                     The platform uses DevBits, the developer's currency. After completing tasks and challenges, you earn DevBits which can be redeemed in the shop for power-ups, streak freezes, and much more. Once you’ve earned DevBits, simply visit the <a href="/shop" className="text-blue-600">Shop</a> to spend them and unlock awesome features!
                     <br />
                     <br />
-                    For more information on how to use your DevBits, check out the <a href="/shop-guide" className="text-blue-600">Shop Guide</a>.
+                    To buy on shop, you can visit the shop here <Link href="/shop" className="text-blue-600">Shop</Link>.
                 </>
             )
         },
