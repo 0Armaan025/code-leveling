@@ -27,7 +27,7 @@ const ItemsPageComponent = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent"></div>
 
             {/* Main Container */}
-            <div className="relative w-full max-w-[1000px] dark:bg-black/90 bg-white rounded-2xl border-2 border-black shadow-2xl p-6 backdrop-blur-xl">
+            <div className="relative w-full max-w-[1000px] dark:bg-black/90 bg-white rounded-2xl border-2 border-black dark:border-2 dark:border-gray-700 shadow-2xl p-6 backdrop-blur-xl">
                 {/* Holographic Effects */}
                 <div className="absolute inset-0 rounded-2xl border-2 border-blue-500/20 animate-border-pulse"></div>
                 
@@ -35,7 +35,7 @@ const ItemsPageComponent = () => {
                 {/* Header */}
                 <div className="flex justify-between items-center mb-8">
                     <div className="space-y-1">
-                        <h1 className="text-3xl font-bold dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-blue-400 dark:to-cyan-500 dark:animate-text-shimmer text-black">
+                        <h1 className="text-3xl font-bold  dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-blue-400 dark:to-cyan-500 dark:animate-text-shimmer text-black">
                             SYSTEM INVENTORY
                         </h1>
                         <p className="text-sm dark:text-cyan-400/80 text-black font-mono">Item Management Interface</p>
